@@ -1,7 +1,7 @@
 site_name: AddRobots
 site_description: 'Documentation'
 site_author: 'Jeff Williams'
-site_url: 'https://github.com/0x6a77/addrobots_docs/'
+site_url: 'https://github.com/AddRobots/addrobots_docs/'
 
 pages:
 - Home: index.md
@@ -47,5 +47,5 @@ markdown_extensions:
   - codehilite(guess_lang=false)
   - toc(permalink=true)
 
-repo_url: https://github.com/0x6a77/addrobots_docs/
+repo_url: https://github.com/AddRobots/addrobots_docs/
 copyright: AddRobots Documentation<br>Copyright &copy; 2017 <a href="https://github.com/0x6a77">Jeff Williams</a> under BSD-3 License
