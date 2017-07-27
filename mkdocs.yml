@@ -1,0 +1,51 @@
+site_name: AddRobots
+site_description: 'Documentation'
+site_author: 'Jeff Williams'
+site_url: 'https://github.com/0x6a77/addrobots_docs/'
+
+pages:
+- Home: index.md
+- Repos: repos/repos.md
+- Contribute: about/contribute.md
+- License: about/license.md
+- ZeroDiff: about/zerodiff.md
+- Motor Messages:
+  - General: messages/motor.md
+  - Message Types:
+    - MotorCmd: messages/commands/motorcmd.md
+    - MotorData: messages/data/motordata.md
+  - Application Messages:
+    - Robotic Cart: messages/application/cartcmds.md
+  - Code Generation: messages/processing.md
+- Applications:
+  - Shim Application: applications/shim.md
+  - Robotic Cart: applications/cart.md
+
+#theme: mkdocs
+theme: null
+theme_dir: themes/material
+
+extra:
+  feature:
+    tabs: true
+  logo: 'images/profile.png'
+  palette:
+    primary: 'blue'
+    accent: 'indigo'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+  social:
+    - type: 'github'
+      link: 'https://github.com/0x6a77'
+
+site_favicon: 'images/favicon/favicon.ico'
+
+markdown_extensions:
+  - tables
+  - admonition
+  - codehilite(guess_lang=false)
+  - toc(permalink=true)
+
+repo_url: https://github.com/0x6a77/addrobots_docs/
+copyright: AddRobots Documentation<br>Copyright &copy; 2017 <a href="https://github.com/0x6a77">Jeff Williams</a> under BSD-3 License

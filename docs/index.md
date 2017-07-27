@@ -1,0 +1,13 @@
+# Add Robots
+
+This project introduces open-source motors (stepper, bldc or solenoid) that are a total snap to remotely control from a cloud-application. It removes the "seven layers of crap" required to create a precision motor-control system if all you want to do it sling code. You send these motors protocol-buffer-encoded commands using any programming language, and the motors simply do what you tell them to do!
+
+The physical motors are USB Type-C peripherals so that a single, robust cable sends data and power (up to 100W). When you connect one to a smartphone (e.g Android), the motor auto-enumerates as a peripheral and a message-oriented background service starts. You then have the choice of a full-blown local smartphone application, e.g. a vehicle drive application with a PID-based control loop, or you can have a shim layer that sends/receives the motor commands to Google Compute (Firebase). Either way, you get local motor control in a reliable, mobile-friendly technology package. The smartphone's other capabilities are useful in the creation of many different remote applications. As an embedded system you have secure OS/updates, wireless networking, camera, compass, accelerometer, robust CPU, power/battery/charge management and excellent/free debugging tools. Further, with Google Project Fi, it is possible to pay a low monthly fee for a high-powered Android device that fluidly switches between LTE & WiFi where the LTE data is only $10/GB pro-rated.
+
+## Why Do We Want This?
+
+The goal is to add robotic capabilities to things that we do not today think of as robotic. But to get to this point, we need much better tools that are cheaper, easier-to-use and open. To realize this, we need motor objects that are as simple to use as any UX object, and tie them to technologies that are natively web-friendly. This will make it much easier for everyone to stitch together machine-learning applications that physically manipulate their environment. For specialized motor control machinery applications that are expensive ($10k-100K), it may be possible to re-invent them for several hundred dollars each.
+
+## Cloud Motors by Design
+
+When we cloud-enable motors (stepper, BLDC, solenoid) we make it much easier to control them from modern application developer stacks. This project will result in a motor design driven directly by commands sent from a remote application that's cloud-native, but it also has support for a local-loop running in a smartphone.
