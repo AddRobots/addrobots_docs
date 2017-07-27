@@ -1056,12 +1056,18 @@
 <p>The amount of torque to apply in an attempt to hold the requested position for the commands GOTO_POS or BRAKE. (2.0, Newton)</p>
 <h5 id="breakaway">BREAKAWAY<a class="headerlink" href="#breakaway" title="Permanent link">&para;</a></h5>
 <p>If the motor fails to hold a position, maintain a velocity or accelerate for this much time, it will freewheel. When set to 0 there is no breakaway behavior (0, SEC)</p>
-<p><strong>NB: THIS IN NO WAY ASSURES A HUMAN-SAFE OPERATION - ALL HUMAN SAFETY SYSTEMS MUST BE EXTERNAL TO MOTOR CONTROL.</strong>* </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>NB: THIS IN NO WAY ASSURES A HUMAN-SAFE OPERATION - ALL HUMAN SAFETY SYSTEMS MUST BE EXTERNAL TO MOTOR CONTROL.</p>
+</div>
 <h5 id="min_current_limit">MIN_CURRENT_LIMIT<a class="headerlink" href="#min_current_limit" title="Permanent link">&para;</a></h5>
 <p>The minimum current the motor should try to maintain for the active operation. During the active operation, the controller will continuously detect the minimum current required to successfully complete the operation, but it will never go below the MIN_CURRENT_LIMIT. (0.0, AMP)</p>
 <h5 id="max_current_limit">MAX_CURRENT_LIMIT<a class="headerlink" href="#max_current_limit" title="Permanent link">&para;</a></h5>
 <p>The maximum current the motor is allowed to draw for the active operation. During the active operation, the controller will continuously detect the minimum current required to successfully complete the operation, but it will never go above the MAX_CURRENT_LIMIT. When coupled with BREAKAWAY, this is a good way to create a safe-operation envelope. (0.5 AMP)</p>
-<p><strong><em>NB: THIS IN NO WAY ASSURES A HUMAN-SAFE OPERATION - ALL HUMAN SAFETY SYSTEMS MUST BE EXTERNAL TO MOTOR CONTROL.</em></strong> </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>NB: THIS IN NO WAY ASSURES A HUMAN-SAFE OPERATION - ALL HUMAN SAFETY SYSTEMS MUST BE EXTERNAL TO MOTOR CONTROL.</p>
+</div>
 <h5 id="min_volt_velocity">MIN_VOLT_VELOCITY<a class="headerlink" href="#min_volt_velocity" title="Permanent link">&para;</a></h5>
 <p>Apply the MIN_VOLT_LIMIT when the velocity is at or below this value. The controller uses a voltage slope from MIN_VOLT_LIMIT to MAX_VOLT_LIMIT when velocity is between MIN_VOLT_VELOCITY and MAX_VOLT_VELOCITY (180, DEGREE/SEC)</p>
 <h5 id="max_volt_velocity">MAX_VOLT_VELOCITY<a class="headerlink" href="#max_volt_velocity" title="Permanent link">&para;</a></h5>
