@@ -36,7 +36,8 @@ The amount of torque to apply in an attempt to hold the requested position for t
 
 If the motor fails to hold a position, maintain a velocity or accelerate for this much time, it will freewheel. When set to 0 there is no breakaway behavior (0, SEC)
 
-**NB: THIS IN NO WAY ASSURES A HUMAN-SAFE OPERATION - ALL HUMAN SAFETY SYSTEMS MUST BE EXTERNAL TO MOTOR CONTROL.*** 
+!!! warning
+	NB: THIS IN NO WAY ASSURES A HUMAN-SAFE OPERATION - ALL HUMAN SAFETY SYSTEMS MUST BE EXTERNAL TO MOTOR CONTROL.
 
 ##### MIN_CURRENT_LIMIT
 
@@ -46,7 +47,8 @@ The minimum current the motor should try to maintain for the active operation. D
 
 The maximum current the motor is allowed to draw for the active operation. During the active operation, the controller will continuously detect the minimum current required to successfully complete the operation, but it will never go above the MAX_CURRENT_LIMIT. When coupled with BREAKAWAY, this is a good way to create a safe-operation envelope. (0.5 AMP)
 
-***NB: THIS IN NO WAY ASSURES A HUMAN-SAFE OPERATION - ALL HUMAN SAFETY SYSTEMS MUST BE EXTERNAL TO MOTOR CONTROL.*** 
+!!! warning
+	NB: THIS IN NO WAY ASSURES A HUMAN-SAFE OPERATION - ALL HUMAN SAFETY SYSTEMS MUST BE EXTERNAL TO MOTOR CONTROL.
 
 ##### MIN_VOLT_VELOCITY
 
