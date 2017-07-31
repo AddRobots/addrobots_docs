@@ -22,7 +22,7 @@
         }, 
         {
             "location": "/repos/repos/", 
-            "text": "The Project Repos\n\n\naddrobots_proto\n\n\nthe core protocol buffer message definitions. it also includes the top-level project documentation. (For convenience, this project also includes the high-level commands, encoded as protocol buffers, for the reference application.)\n\n\naddrobots_webconsole\n\n\na Firebase + ReactJS webapp that acts as a vehicle control console for the reference application.\n\n\naddrobots_service\n\n\nan Android background service that tracks and controls the motors over the USB bus. It provides a simple message-passing API so that any high-level application (that has permission) can control the motors.\n\n\naddrobots_vcu\n\n\nthe android \"vehicle control unit\" reference application that combines drive logic with a PID loop that uses local sensor data, such as OpenCV, Firebase messaging, addrobots_service, and the local IMU.\n\n\naddrobots_mcu\n\n\nan ARM CortexM4 based motor controller firmware that encodes/decodes the USB commands, drives the motor controller ICs, controls the PMIC, and collects/sends any sensor data (rotary encoder, PMIC values, etc).\n\n\naddrobots_pcb\n\n\nthe PCB designs for the motor control boards that physically attach to the motor.", 
+            "text": "The Project Repos\n\n\naddrobots_proto\n\n\nhttps://github.com/AddRobots/addrobots_proto\n     \n\n\nThe core protocol buffer message definitions. it also includes the top-level project documentation. (For convenience, this project also includes the high-level commands, encoded as protocol buffers, for the reference application.)\n\n\naddrobots_webconsole\n\n\nhttps://github.com/AddRobots/addrobots_webconsole\n\n\nA Firebase + ReactJS webapp that acts as a vehicle control console for the reference application.\n\n\naddrobots_service\n\n\nhttps://github.com/AddRobots/addrobots_vcu\n\n\nAn Android background service that tracks and controls the motors over the USB bus. It provides a simple message-passing API so that any high-level application (that has permission) can control the motors.\n\n\naddrobots_vcu\n\n\nhttps://github.com/AddRobots/addrobots_vcu\n\n\nThe android \"vehicle control unit\" reference application that combines drive logic with a PID loop that uses local sensor data, such as OpenCV, Firebase messaging, addrobots_service, and the local IMU.\n\n\naddrobots_mcu\n\n\nhttps://github.com/AddRobots/addrobots_mcu\n\n\nAn ARM CortexM4 based motor controller firmware that encodes/decodes the USB commands, drives the motor controller ICs, controls the PMIC, and collects/sends any sensor data (rotary encoder, PMIC values, etc).\n\n\naddrobots_pcb\n\n\nhttps://github.com/AddRobots/addrobots_pcb\n\n\nThe PCB designs for the motor control boards that physically attach to the motor.", 
             "title": "Repos"
         }, 
         {
@@ -32,32 +32,32 @@
         }, 
         {
             "location": "/repos/repos/#addrobots_proto", 
-            "text": "the core protocol buffer message definitions. it also includes the top-level project documentation. (For convenience, this project also includes the high-level commands, encoded as protocol buffers, for the reference application.)", 
+            "text": "https://github.com/AddRobots/addrobots_proto        The core protocol buffer message definitions. it also includes the top-level project documentation. (For convenience, this project also includes the high-level commands, encoded as protocol buffers, for the reference application.)", 
             "title": "addrobots_proto"
         }, 
         {
             "location": "/repos/repos/#addrobots_webconsole", 
-            "text": "a Firebase + ReactJS webapp that acts as a vehicle control console for the reference application.", 
+            "text": "https://github.com/AddRobots/addrobots_webconsole  A Firebase + ReactJS webapp that acts as a vehicle control console for the reference application.", 
             "title": "addrobots_webconsole"
         }, 
         {
             "location": "/repos/repos/#addrobots_service", 
-            "text": "an Android background service that tracks and controls the motors over the USB bus. It provides a simple message-passing API so that any high-level application (that has permission) can control the motors.", 
+            "text": "https://github.com/AddRobots/addrobots_vcu  An Android background service that tracks and controls the motors over the USB bus. It provides a simple message-passing API so that any high-level application (that has permission) can control the motors.", 
             "title": "addrobots_service"
         }, 
         {
             "location": "/repos/repos/#addrobots_vcu", 
-            "text": "the android \"vehicle control unit\" reference application that combines drive logic with a PID loop that uses local sensor data, such as OpenCV, Firebase messaging, addrobots_service, and the local IMU.", 
+            "text": "https://github.com/AddRobots/addrobots_vcu  The android \"vehicle control unit\" reference application that combines drive logic with a PID loop that uses local sensor data, such as OpenCV, Firebase messaging, addrobots_service, and the local IMU.", 
             "title": "addrobots_vcu"
         }, 
         {
             "location": "/repos/repos/#addrobots_mcu", 
-            "text": "an ARM CortexM4 based motor controller firmware that encodes/decodes the USB commands, drives the motor controller ICs, controls the PMIC, and collects/sends any sensor data (rotary encoder, PMIC values, etc).", 
+            "text": "https://github.com/AddRobots/addrobots_mcu  An ARM CortexM4 based motor controller firmware that encodes/decodes the USB commands, drives the motor controller ICs, controls the PMIC, and collects/sends any sensor data (rotary encoder, PMIC values, etc).", 
             "title": "addrobots_mcu"
         }, 
         {
             "location": "/repos/repos/#addrobots_pcb", 
-            "text": "the PCB designs for the motor control boards that physically attach to the motor.", 
+            "text": "https://github.com/AddRobots/addrobots_pcb  The PCB designs for the motor control boards that physically attach to the motor.", 
             "title": "addrobots_pcb"
         }, 
         {
