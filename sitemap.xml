@@ -18,14 +18,8 @@
     </url>
         
     <url>
-     <loc>https://github.com/AddRobots/addrobots_docs//repos/addrobots_vcu/</loc>
-     <lastmod>2017-08-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://github.com/AddRobots/addrobots_docs//repos/addrobots_mcu/</loc>
-     <lastmod>2017-08-20</lastmod>
+     <loc>https://github.com/AddRobots/addrobots_docs/</loc>
+     <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -72,12 +66,6 @@
     <url>
      <loc>https://github.com/AddRobots/addrobots_docs/</loc>
      <lastmod></lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://github.com/AddRobots/addrobots_docs//messages/processing/</loc>
-     <lastmod>2017-08-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
