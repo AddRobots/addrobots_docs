@@ -5,7 +5,10 @@ site_url: 'https://github.com/AddRobots/addrobots_docs/'
 
 pages:
 - Home: index.md
-- Repos: repos/repos.md
+- Repos:
+  - Overview: repos/repos.md
+  - VCU: repos/addrobots_vcu.md
+  - MCU: repos/addrobots_mcu.md
 - Contribute: about/contribute.md
 - License: about/license.md
 - ZeroDiff: about/zerodiff.md

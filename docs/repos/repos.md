@@ -11,7 +11,7 @@ The core protocol buffer message definitions. it also includes the top-level pro
 A Firebase + ReactJS webapp that acts as a vehicle control console for the reference application.
 
 ### addrobots_service
-[https://github.com/AddRobots/addrobots_vcu](https://github.com/AddRobots/addrobots_vcu)
+[https://github.com/AddRobots/addrobots_service](https://github.com/AddRobots/addrobots_service)
 
 An Android background service that tracks and controls the motors over the USB bus. It provides a simple message-passing API so that any high-level application (that has permission) can control the motors.
 
