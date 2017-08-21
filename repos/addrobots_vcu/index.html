@@ -10,7 +10,7 @@
         <meta name="description" content="Documentation">
       
       
-        <link rel="canonical" href="https://github.com/AddRobots/addrobots_docs/about/zerodiff/">
+        <link rel="canonical" href="https://github.com/AddRobots/addrobots_docs/repos/addrobots_vcu/">
       
       
         <meta name="author" content="Jeff Williams">
@@ -22,7 +22,7 @@
     
     
       
-        <title>ZeroDiff - AddRobots</title>
+        <title>VCU - AddRobots</title>
       
     
     
@@ -83,8 +83,12 @@
           
             
               
+                <span class="md-header-nav__parent">
+                  Repos
+                </span>
+              
             
-            ZeroDiff
+            VCU
           
         </span>
       </div>
@@ -148,14 +152,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../.." title="Home" class="md-tabs__link md-tabs__link--active">
+      <a href="../.." title="Home" class="md-tabs__link">
         Home
       </a>
     
@@ -167,7 +173,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../repos/repos/" title="Repos" class="md-tabs__link">
+        <a href="../repos/" title="Repos" class="md-tabs__link md-tabs__link--active">
           Repos
         </a>
       
@@ -268,10 +274,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Repos
@@ -289,7 +297,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../repos/repos/" title="Overview" class="md-nav__link">
+    <a href="../repos/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -299,11 +307,74 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../repos/addrobots_vcu/" title="VCU" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        VCU
+      </label>
+    
+    <a href="./" title="VCU" class="md-nav__link md-nav__link--active">
       VCU
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#build-instructions" title="Build Instructions" class="md-nav__link">
+    Build Instructions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opencv" title="OpenCV" class="md-nav__link">
+    OpenCV
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmake" title="cmake" class="md-nav__link">
+    cmake
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-organization-improvementsgoals" title="Build Organization Improvements/Goals" class="md-nav__link">
+    Build Organization Improvements/Goals
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -313,7 +384,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../repos/addrobots_mcu/" title="MCU" class="md-nav__link">
+    <a href="../addrobots_mcu/" title="MCU" class="md-nav__link">
       MCU
     </a>
   </li>
@@ -330,7 +401,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../contribute/" title="Contribute" class="md-nav__link">
+    <a href="../../about/contribute/" title="Contribute" class="md-nav__link">
       Contribute
     </a>
   </li>
@@ -342,7 +413,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../license/" title="License" class="md-nav__link">
+    <a href="../../about/license/" title="License" class="md-nav__link">
       License
     </a>
   </li>
@@ -352,18 +423,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-    
-    <a href="./" title="ZeroDiff" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../about/zerodiff/" title="ZeroDiff" class="md-nav__link">
       ZeroDiff
     </a>
-    
   </li>
 
     
@@ -561,6 +625,49 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#build-instructions" title="Build Instructions" class="md-nav__link">
+    Build Instructions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opencv" title="OpenCV" class="md-nav__link">
+    OpenCV
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmake" title="cmake" class="md-nav__link">
+    cmake
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-organization-improvementsgoals" title="Build Organization Improvements/Goals" class="md-nav__link">
+    Build Organization Improvements/Goals
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
   
 </nav>
                   </div>
@@ -572,12 +679,30 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/AddRobots/addrobots_docs/edit/master/docs/about/zerodiff.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
+                  <a href="https://github.com/AddRobots/addrobots_docs/edit/master/docs/repos/addrobots_vcu.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
                 
                 
-                  <h1>ZeroDiff</h1>
-                
-                <p>We follow the ZeroDiff process to develop the AddRobots. You can read more about it <a href="http://www.zerodiff.org">here</a></p>
+                <h1 id="addrobots_vcu">AddRobots_VCU<a class="headerlink" href="#addrobots_vcu" title="Permanent link">&para;</a></h1>
+<h2 id="build-instructions">Build Instructions<a class="headerlink" href="#build-instructions" title="Permanent link">&para;</a></h2>
+<p>This is a pretty much a standard Android Studio project with two modules: <code>app</code> and <code>openCVLibrary</code>. The project requires Android Studio's NDK native plugin, so you will need to use Android Studio 2.2+ and install the NDK libraries from the Android Studio SDK Manager.</p>
+<h3 id="opencv">OpenCV<a class="headerlink" href="#opencv" title="Permanent link">&para;</a></h3>
+<p>We started the project with the OpenCV module into an Android project: <a href="http://docs.opencv.org/2.4/doc/tutorials/introduction/android_binary_package/O4A_SDK.html">OpenCV4Android</a>, but then heavily modified it to fully build the core OpenCV C/C++ library entirely within Android Studio. OpenCV4Android is in java and it requires OpenCV shared libraries for the relevant target CPU platform. Normally, you'd have to build these libraries separately and add them to the project. This project now builds these libraries directly from the OpenCV code during the normal Gradle build. This means, as long as the OpenCV main code is in a directory that's peered to this project, it will build these libraries using CMake and NDK directly from within the Android Studio project build with no manual intervention. (Tho' it takes a long time to build these libraries!) Whatever version of OpenCV you have in the peer directory, Android Studio will build it for you. (We've built 3.1.0, 3.2.0 and 3.3.0 and anticipate it will be easy to continue to upgrade OpenCV at any time.)</p>
+<p>The way to organize this is:</p>
+<pre class="codehilite"><code>AndroidStudioProjects
+    opencv &lt;-- opencv 3.3.0 main project directly from github
+    addrobots_vcu &lt;-- directly from the github repo</code></pre>
+
+
+<p>Gradle in Android Studio can't deal with absolute paths, so you really need a structure like this one above, where the OpenCV main C/C++ source project is relative to the VCU project.</p>
+<h3 id="cmake">cmake<a class="headerlink" href="#cmake" title="Permanent link">&para;</a></h3>
+<p>The build from Android Studio will invoke a setup file <code>android.toolchain.cmake</code>, but this file is not correct to build OpenCV! There is a modified version of this file in the openCVLibrary submodule. Unfortunately, this file requires some knowledge of where it's installed, and for this reason, if you haven't used the directory structure from above, it will not be correct. The standard <code>android.toolchain.cmake</code> is sooo close, but it's not quite there yet (Google has been improving it a lot, and now it's just a handful of changes to make it work - hopefull they can make it work 100% with the standard file they ship with Android Studio NDK/CMake.)</p>
+<h2 id="build-organization-improvementsgoals">Build Organization Improvements/Goals<a class="headerlink" href="#build-organization-improvementsgoals" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Get Gradle Plugin/RuleSource to accept absolute paths, so that we can put the FFmpeg (and later OpenCV) repos whenever we want. (e.g. ~/git).</li>
+<li>Use NDK to also natively build OpenCV from the raw git repo so that we can debug the sources.</li>
+<li>Generalize the AutotoolsPlugin class so that it works with <em>any</em> autotools-based project.</li>
+<li>Clean-up various messes. It's hard to know best practices in this part of Gradle and with the Android plugin since it's still somewhat new.</li>
+</ul>
                 
                   
                 
@@ -596,7 +721,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../license/" title="License" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../repos/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -605,19 +730,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                License
+                Overview
               </span>
             </div>
           </a>
         
         
-          <a href="../../messages/motor/" title="General" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../addrobots_mcu/" title="MCU" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                General
+                MCU
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

@@ -10,7 +10,7 @@
         <meta name="description" content="Documentation">
       
       
-        <link rel="canonical" href="https://github.com/AddRobots/addrobots_docs/about/zerodiff/">
+        <link rel="canonical" href="https://github.com/AddRobots/addrobots_docs/repos/addrobots_mcu/">
       
       
         <meta name="author" content="Jeff Williams">
@@ -22,7 +22,7 @@
     
     
       
-        <title>ZeroDiff - AddRobots</title>
+        <title>MCU - AddRobots</title>
       
     
     
@@ -83,8 +83,12 @@
           
             
               
+                <span class="md-header-nav__parent">
+                  Repos
+                </span>
+              
             
-            ZeroDiff
+            MCU
           
         </span>
       </div>
@@ -148,14 +152,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../.." title="Home" class="md-tabs__link md-tabs__link--active">
+      <a href="../.." title="Home" class="md-tabs__link">
         Home
       </a>
     
@@ -167,7 +173,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../repos/repos/" title="Repos" class="md-tabs__link">
+        <a href="../repos/" title="Repos" class="md-tabs__link md-tabs__link--active">
           Repos
         </a>
       
@@ -268,10 +274,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Repos
@@ -289,7 +297,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../repos/repos/" title="Overview" class="md-nav__link">
+    <a href="../repos/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -301,7 +309,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../repos/addrobots_vcu/" title="VCU" class="md-nav__link">
+    <a href="../addrobots_vcu/" title="VCU" class="md-nav__link">
       VCU
     </a>
   </li>
@@ -311,11 +319,54 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../repos/addrobots_mcu/" title="MCU" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        MCU
+      </label>
+    
+    <a href="./" title="MCU" class="md-nav__link md-nav__link--active">
       MCU
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#build-instructions" title="Build Instructions" class="md-nav__link">
+    Build Instructions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-improvements-goals" title="Project Improvements &amp; Goals" class="md-nav__link">
+    Project Improvements &amp; Goals
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -330,7 +381,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../contribute/" title="Contribute" class="md-nav__link">
+    <a href="../../about/contribute/" title="Contribute" class="md-nav__link">
       Contribute
     </a>
   </li>
@@ -342,7 +393,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../license/" title="License" class="md-nav__link">
+    <a href="../../about/license/" title="License" class="md-nav__link">
       License
     </a>
   </li>
@@ -352,18 +403,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-    
-    <a href="./" title="ZeroDiff" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../about/zerodiff/" title="ZeroDiff" class="md-nav__link">
       ZeroDiff
     </a>
-    
   </li>
 
     
@@ -561,6 +605,29 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#build-instructions" title="Build Instructions" class="md-nav__link">
+    Build Instructions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-improvements-goals" title="Project Improvements &amp; Goals" class="md-nav__link">
+    Project Improvements &amp; Goals
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
   
 </nav>
                   </div>
@@ -572,12 +639,20 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/AddRobots/addrobots_docs/edit/master/docs/about/zerodiff.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
+                  <a href="https://github.com/AddRobots/addrobots_docs/edit/master/docs/repos/addrobots_mcu.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
                 
                 
-                  <h1>ZeroDiff</h1>
-                
-                <p>We follow the ZeroDiff process to develop the AddRobots. You can read more about it <a href="http://www.zerodiff.org">here</a></p>
+                <h1 id="addrobots_mcu">AddRobots_MCU<a class="headerlink" href="#addrobots_mcu" title="Permanent link">&para;</a></h1>
+<h2 id="build-instructions">Build Instructions<a class="headerlink" href="#build-instructions" title="Permanent link">&para;</a></h2>
+<p>The project is a Kinetis Design Studio 3.x project (KDS 3.2.0) <a href="https://community.nxp.com/docs/DOC-330211">https://community.nxp.com/docs/DOC-330211</a> </p>
+<p>It takes advantage of the following projects:</p>
+<ul>
+<li>GNUARM Eclipse OpenOCD <a href="https://gnuarmeclipse.github.io/">https://gnuarmeclipse.github.io/</a></li>
+<li>MCU on Eclipse Processor Expert beans <a href="https://mcuoneclipse.com/category/processor-expert/">https://mcuoneclipse.com/category/processor-expert/</a></li>
+</ul>
+<p>Install the tools from these projects into KDS, and then open the project. Then select <code>Generate Processor Expert Code</code> and that will generate code from the Process Expoert Beans. The project is likely in <code>Build Automatically</code> mode which means the project will build all the code. If it's not, then select <code>Build Project</code>. There will be a debug/run configuration called <code>addrobots_mcu (OpenOCD KL22F) (release)</code> that should run the code. It's a CMSIS/DAP program/run setup, so if there's compatible device on the USB bus, the IDE will program it and then run/debug the code.</p>
+<h2 id="project-improvements-goals">Project Improvements &amp; Goals<a class="headerlink" href="#project-improvements-goals" title="Permanent link">&para;</a></h2>
+<p>NXP bought Freescale in 2016, and they soon deprecated KDS. They replaced it with a new IDE, MCU Xpresso that's not quite ready for a port of this project. It may be possible to bring Processor Expert into an Eclipse Neon version of MCU Xpresso: <a href="https://mcuoneclipse.com/2017/04/09/mcuxpresso-ide-installing-processor-expert-into-eclipse-neon/">https://mcuoneclipse.com/2017/04/09/mcuxpresso-ide-installing-processor-expert-into-eclipse-neon/</a></p>
                 
                   
                 
@@ -596,7 +671,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../license/" title="License" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../addrobots_vcu/" title="VCU" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -605,19 +680,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                License
+                VCU
               </span>
             </div>
           </a>
         
         
-          <a href="../../messages/motor/" title="General" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../about/contribute/" title="Contribute" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                General
+                Contribute
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

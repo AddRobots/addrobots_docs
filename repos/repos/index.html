@@ -22,7 +22,7 @@
     
     
       
-        <title>Repos - AddRobots</title>
+        <title>Overview - AddRobots</title>
       
     
     
@@ -83,8 +83,12 @@
           
             
               
+                <span class="md-header-nav__parent">
+                  Repos
+                </span>
+              
             
-            Repos
+            Overview
           
         </span>
       </div>
@@ -148,14 +152,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../.." title="Home" class="md-tabs__link md-tabs__link--active">
+      <a href="../.." title="Home" class="md-tabs__link">
         Home
       </a>
     
@@ -163,6 +169,17 @@
 
       
         
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" title="Repos" class="md-tabs__link md-tabs__link--active">
+          Repos
+        </a>
+      
+    </li>
+  
+
       
         
       
@@ -260,17 +277,38 @@
   
 
 
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Repos
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Repos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
   <li class="md-nav__item md-nav__item--active">
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Repos
+        Overview
       </label>
     
-    <a href="./" title="Repos" class="md-nav__link md-nav__link--active">
-      Repos
+    <a href="./" title="Overview" class="md-nav__link md-nav__link--active">
+      Overview
     </a>
     
       
@@ -342,6 +380,35 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../addrobots_vcu/" title="VCU" class="md-nav__link">
+      VCU
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../addrobots_mcu/" title="MCU" class="md-nav__link">
+      MCU
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -651,7 +718,7 @@
                   <a href="https://github.com/AddRobots/addrobots_docs/edit/master/docs/repos/repos.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
                 
                 
-                  <h1>Repos</h1>
+                  <h1>Overview</h1>
                 
                 <h2 id="the-project-repos">The Project Repos<a class="headerlink" href="#the-project-repos" title="Permanent link">&para;</a></h2>
 <h3 id="addrobots_proto">addrobots_proto<a class="headerlink" href="#addrobots_proto" title="Permanent link">&para;</a></h3>
@@ -661,7 +728,7 @@
 <p><a href="https://github.com/AddRobots/addrobots_webconsole">https://github.com/AddRobots/addrobots_webconsole</a></p>
 <p>A Firebase + ReactJS webapp that acts as a vehicle control console for the reference application.</p>
 <h3 id="addrobots_service">addrobots_service<a class="headerlink" href="#addrobots_service" title="Permanent link">&para;</a></h3>
-<p><a href="https://github.com/AddRobots/addrobots_vcu">https://github.com/AddRobots/addrobots_vcu</a></p>
+<p><a href="https://github.com/AddRobots/addrobots_service">https://github.com/AddRobots/addrobots_service</a></p>
 <p>An Android background service that tracks and controls the motors over the USB bus. It provides a simple message-passing API so that any high-level application (that has permission) can control the motors.</p>
 <h3 id="addrobots_vcu">addrobots_vcu<a class="headerlink" href="#addrobots_vcu" title="Permanent link">&para;</a></h3>
 <p><a href="https://github.com/AddRobots/addrobots_vcu">https://github.com/AddRobots/addrobots_vcu</a></p>
@@ -705,13 +772,13 @@
           </a>
         
         
-          <a href="../../about/contribute/" title="Contribute" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../addrobots_vcu/" title="VCU" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Contribute
+                VCU
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

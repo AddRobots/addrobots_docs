@@ -22,8 +22,8 @@
         }, 
         {
             "location": "/repos/repos/", 
-            "text": "The Project Repos\n\n\naddrobots_proto\n\n\nhttps://github.com/AddRobots/addrobots_proto\n     \n\n\nThe core protocol buffer message definitions. it also includes the top-level project documentation. (For convenience, this project also includes the high-level commands, encoded as protocol buffers, for the reference application.)\n\n\naddrobots_webconsole\n\n\nhttps://github.com/AddRobots/addrobots_webconsole\n\n\nA Firebase + ReactJS webapp that acts as a vehicle control console for the reference application.\n\n\naddrobots_service\n\n\nhttps://github.com/AddRobots/addrobots_vcu\n\n\nAn Android background service that tracks and controls the motors over the USB bus. It provides a simple message-passing API so that any high-level application (that has permission) can control the motors.\n\n\naddrobots_vcu\n\n\nhttps://github.com/AddRobots/addrobots_vcu\n\n\nThe android \"vehicle control unit\" reference application that combines drive logic with a PID loop that uses local sensor data, such as OpenCV, Firebase messaging, addrobots_service, and the local IMU.\n\n\naddrobots_mcu\n\n\nhttps://github.com/AddRobots/addrobots_mcu\n\n\nAn ARM CortexM4 based motor controller firmware that encodes/decodes the USB commands, drives the motor controller ICs, controls the PMIC, and collects/sends any sensor data (rotary encoder, PMIC values, etc).\n\n\naddrobots_pcb\n\n\nhttps://github.com/AddRobots/addrobots_pcb\n\n\nThe PCB designs for the motor control boards that physically attach to the motor.", 
-            "title": "Repos"
+            "text": "The Project Repos\n\n\naddrobots_proto\n\n\nhttps://github.com/AddRobots/addrobots_proto\n     \n\n\nThe core protocol buffer message definitions. it also includes the top-level project documentation. (For convenience, this project also includes the high-level commands, encoded as protocol buffers, for the reference application.)\n\n\naddrobots_webconsole\n\n\nhttps://github.com/AddRobots/addrobots_webconsole\n\n\nA Firebase + ReactJS webapp that acts as a vehicle control console for the reference application.\n\n\naddrobots_service\n\n\nhttps://github.com/AddRobots/addrobots_service\n\n\nAn Android background service that tracks and controls the motors over the USB bus. It provides a simple message-passing API so that any high-level application (that has permission) can control the motors.\n\n\naddrobots_vcu\n\n\nhttps://github.com/AddRobots/addrobots_vcu\n\n\nThe android \"vehicle control unit\" reference application that combines drive logic with a PID loop that uses local sensor data, such as OpenCV, Firebase messaging, addrobots_service, and the local IMU.\n\n\naddrobots_mcu\n\n\nhttps://github.com/AddRobots/addrobots_mcu\n\n\nAn ARM CortexM4 based motor controller firmware that encodes/decodes the USB commands, drives the motor controller ICs, controls the PMIC, and collects/sends any sensor data (rotary encoder, PMIC values, etc).\n\n\naddrobots_pcb\n\n\nhttps://github.com/AddRobots/addrobots_pcb\n\n\nThe PCB designs for the motor control boards that physically attach to the motor.", 
+            "title": "Overview"
         }, 
         {
             "location": "/repos/repos/#the-project-repos", 
@@ -42,7 +42,7 @@
         }, 
         {
             "location": "/repos/repos/#addrobots_service", 
-            "text": "https://github.com/AddRobots/addrobots_vcu  An Android background service that tracks and controls the motors over the USB bus. It provides a simple message-passing API so that any high-level application (that has permission) can control the motors.", 
+            "text": "https://github.com/AddRobots/addrobots_service  An Android background service that tracks and controls the motors over the USB bus. It provides a simple message-passing API so that any high-level application (that has permission) can control the motors.", 
             "title": "addrobots_service"
         }, 
         {
@@ -59,6 +59,56 @@
             "location": "/repos/repos/#addrobots_pcb", 
             "text": "https://github.com/AddRobots/addrobots_pcb  The PCB designs for the motor control boards that physically attach to the motor.", 
             "title": "addrobots_pcb"
+        }, 
+        {
+            "location": "/repos/addrobots_vcu/", 
+            "text": "AddRobots_VCU\n\n\nBuild Instructions\n\n\nThis is a pretty much a standard Android Studio project with two modules: \napp\n and \nopenCVLibrary\n. The project requires Android Studio's NDK native plugin, so you will need to use Android Studio 2.2+ and install the NDK libraries from the Android Studio SDK Manager.\n\n\nOpenCV\n\n\nWe started the project with the OpenCV module into an Android project: \nOpenCV4Android\n, but then heavily modified it to fully build the core OpenCV C/C++ library entirely within Android Studio. OpenCV4Android is in java and it requires OpenCV shared libraries for the relevant target CPU platform. Normally, you'd have to build these libraries separately and add them to the project. This project now builds these libraries directly from the OpenCV code during the normal Gradle build. This means, as long as the OpenCV main code is in a directory that's peered to this project, it will build these libraries using CMake and NDK directly from within the Android Studio project build with no manual intervention. (Tho' it takes a long time to build these libraries!) Whatever version of OpenCV you have in the peer directory, Android Studio will build it for you. (We've built 3.1.0, 3.2.0 and 3.3.0 and anticipate it will be easy to continue to upgrade OpenCV at any time.)\n\n\nThe way to organize this is:\n\n\nAndroidStudioProjects\n    opencv \n-- opencv 3.3.0 main project directly from github\n    addrobots_vcu \n-- directly from the github repo\n\n\n\n\nGradle in Android Studio can't deal with absolute paths, so you really need a structure like this one above, where the OpenCV main C/C++ source project is relative to the VCU project.\n\n\ncmake\n\n\nThe build from Android Studio will invoke a setup file \nandroid.toolchain.cmake\n, but this file is not correct to build OpenCV! There is a modified version of this file in the openCVLibrary submodule. Unfortunately, this file requires some knowledge of where it's installed, and for this reason, if you haven't used the directory structure from above, it will not be correct. The standard \nandroid.toolchain.cmake\n is sooo close, but it's not quite there yet (Google has been improving it a lot, and now it's just a handful of changes to make it work - hopefull they can make it work 100% with the standard file they ship with Android Studio NDK/CMake.)\n\n\nBuild Organization Improvements/Goals\n\n\n\n\nGet Gradle Plugin/RuleSource to accept absolute paths, so that we can put the FFmpeg (and later OpenCV) repos whenever we want. (e.g. ~/git).\n\n\nUse NDK to also natively build OpenCV from the raw git repo so that we can debug the sources.\n\n\nGeneralize the AutotoolsPlugin class so that it works with \nany\n autotools-based project.\n\n\nClean-up various messes. It's hard to know best practices in this part of Gradle and with the Android plugin since it's still somewhat new.", 
+            "title": "VCU"
+        }, 
+        {
+            "location": "/repos/addrobots_vcu/#addrobots_vcu", 
+            "text": "", 
+            "title": "AddRobots_VCU"
+        }, 
+        {
+            "location": "/repos/addrobots_vcu/#build-instructions", 
+            "text": "This is a pretty much a standard Android Studio project with two modules:  app  and  openCVLibrary . The project requires Android Studio's NDK native plugin, so you will need to use Android Studio 2.2+ and install the NDK libraries from the Android Studio SDK Manager.", 
+            "title": "Build Instructions"
+        }, 
+        {
+            "location": "/repos/addrobots_vcu/#opencv", 
+            "text": "We started the project with the OpenCV module into an Android project:  OpenCV4Android , but then heavily modified it to fully build the core OpenCV C/C++ library entirely within Android Studio. OpenCV4Android is in java and it requires OpenCV shared libraries for the relevant target CPU platform. Normally, you'd have to build these libraries separately and add them to the project. This project now builds these libraries directly from the OpenCV code during the normal Gradle build. This means, as long as the OpenCV main code is in a directory that's peered to this project, it will build these libraries using CMake and NDK directly from within the Android Studio project build with no manual intervention. (Tho' it takes a long time to build these libraries!) Whatever version of OpenCV you have in the peer directory, Android Studio will build it for you. (We've built 3.1.0, 3.2.0 and 3.3.0 and anticipate it will be easy to continue to upgrade OpenCV at any time.)  The way to organize this is:  AndroidStudioProjects\n    opencv  -- opencv 3.3.0 main project directly from github\n    addrobots_vcu  -- directly from the github repo  Gradle in Android Studio can't deal with absolute paths, so you really need a structure like this one above, where the OpenCV main C/C++ source project is relative to the VCU project.", 
+            "title": "OpenCV"
+        }, 
+        {
+            "location": "/repos/addrobots_vcu/#cmake", 
+            "text": "The build from Android Studio will invoke a setup file  android.toolchain.cmake , but this file is not correct to build OpenCV! There is a modified version of this file in the openCVLibrary submodule. Unfortunately, this file requires some knowledge of where it's installed, and for this reason, if you haven't used the directory structure from above, it will not be correct. The standard  android.toolchain.cmake  is sooo close, but it's not quite there yet (Google has been improving it a lot, and now it's just a handful of changes to make it work - hopefull they can make it work 100% with the standard file they ship with Android Studio NDK/CMake.)", 
+            "title": "cmake"
+        }, 
+        {
+            "location": "/repos/addrobots_vcu/#build-organization-improvementsgoals", 
+            "text": "Get Gradle Plugin/RuleSource to accept absolute paths, so that we can put the FFmpeg (and later OpenCV) repos whenever we want. (e.g. ~/git).  Use NDK to also natively build OpenCV from the raw git repo so that we can debug the sources.  Generalize the AutotoolsPlugin class so that it works with  any  autotools-based project.  Clean-up various messes. It's hard to know best practices in this part of Gradle and with the Android plugin since it's still somewhat new.", 
+            "title": "Build Organization Improvements/Goals"
+        }, 
+        {
+            "location": "/repos/addrobots_mcu/", 
+            "text": "AddRobots_MCU\n\n\nBuild Instructions\n\n\nThe project is a Kinetis Design Studio 3.x project (KDS 3.2.0) \nhttps://community.nxp.com/docs/DOC-330211\n \n\n\nIt takes advantage of the following projects:\n\n\n\n\nGNUARM Eclipse OpenOCD \nhttps://gnuarmeclipse.github.io/\n\n\nMCU on Eclipse Processor Expert beans \nhttps://mcuoneclipse.com/category/processor-expert/\n\n\n\n\nInstall the tools from these projects into KDS, and then open the project. Then select \nGenerate Processor Expert Code\n and that will generate code from the Process Expoert Beans. The project is likely in \nBuild Automatically\n mode which means the project will build all the code. If it's not, then select \nBuild Project\n. There will be a debug/run configuration called \naddrobots_mcu (OpenOCD KL22F) (release)\n that should run the code. It's a CMSIS/DAP program/run setup, so if there's compatible device on the USB bus, the IDE will program it and then run/debug the code.\n\n\nProject Improvements \n Goals\n\n\nNXP bought Freescale in 2016, and they soon deprecated KDS. They replaced it with a new IDE, MCU Xpresso that's not quite ready for a port of this project. It may be possible to bring Processor Expert into an Eclipse Neon version of MCU Xpresso: \nhttps://mcuoneclipse.com/2017/04/09/mcuxpresso-ide-installing-processor-expert-into-eclipse-neon/", 
+            "title": "MCU"
+        }, 
+        {
+            "location": "/repos/addrobots_mcu/#addrobots_mcu", 
+            "text": "", 
+            "title": "AddRobots_MCU"
+        }, 
+        {
+            "location": "/repos/addrobots_mcu/#build-instructions", 
+            "text": "The project is a Kinetis Design Studio 3.x project (KDS 3.2.0)  https://community.nxp.com/docs/DOC-330211    It takes advantage of the following projects:   GNUARM Eclipse OpenOCD  https://gnuarmeclipse.github.io/  MCU on Eclipse Processor Expert beans  https://mcuoneclipse.com/category/processor-expert/   Install the tools from these projects into KDS, and then open the project. Then select  Generate Processor Expert Code  and that will generate code from the Process Expoert Beans. The project is likely in  Build Automatically  mode which means the project will build all the code. If it's not, then select  Build Project . There will be a debug/run configuration called  addrobots_mcu (OpenOCD KL22F) (release)  that should run the code. It's a CMSIS/DAP program/run setup, so if there's compatible device on the USB bus, the IDE will program it and then run/debug the code.", 
+            "title": "Build Instructions"
+        }, 
+        {
+            "location": "/repos/addrobots_mcu/#project-improvements-goals", 
+            "text": "NXP bought Freescale in 2016, and they soon deprecated KDS. They replaced it with a new IDE, MCU Xpresso that's not quite ready for a port of this project. It may be possible to bring Processor Expert into an Eclipse Neon version of MCU Xpresso:  https://mcuoneclipse.com/2017/04/09/mcuxpresso-ide-installing-processor-expert-into-eclipse-neon/", 
+            "title": "Project Improvements &amp; Goals"
         }, 
         {
             "location": "/about/contribute/", 

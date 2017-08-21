@@ -4,23 +4,37 @@
     
     <url>
      <loc>https://github.com/AddRobots/addrobots_docs//</loc>
-     <lastmod>2017-07-30</lastmod>
+     <lastmod>2017-08-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
+        
     <url>
      <loc>https://github.com/AddRobots/addrobots_docs//repos/repos/</loc>
-     <lastmod>2017-07-30</lastmod>
+     <lastmod>2017-08-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    <url>
+     <loc>https://github.com/AddRobots/addrobots_docs//repos/addrobots_vcu/</loc>
+     <lastmod>2017-08-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://github.com/AddRobots/addrobots_docs//repos/addrobots_mcu/</loc>
+     <lastmod>2017-08-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
     <url>
      <loc>https://github.com/AddRobots/addrobots_docs//about/contribute/</loc>
-     <lastmod>2017-07-30</lastmod>
+     <lastmod>2017-08-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -28,7 +42,7 @@
     
     <url>
      <loc>https://github.com/AddRobots/addrobots_docs//about/license/</loc>
-     <lastmod>2017-07-30</lastmod>
+     <lastmod>2017-08-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -36,7 +50,7 @@
     
     <url>
      <loc>https://github.com/AddRobots/addrobots_docs//about/zerodiff/</loc>
-     <lastmod>2017-07-30</lastmod>
+     <lastmod>2017-08-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -45,7 +59,7 @@
         
     <url>
      <loc>https://github.com/AddRobots/addrobots_docs//messages/motor/</loc>
-     <lastmod>2017-07-30</lastmod>
+     <lastmod>2017-08-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -63,7 +77,7 @@
         
     <url>
      <loc>https://github.com/AddRobots/addrobots_docs//messages/processing/</loc>
-     <lastmod>2017-07-30</lastmod>
+     <lastmod>2017-08-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -73,13 +87,13 @@
         
     <url>
      <loc>https://github.com/AddRobots/addrobots_docs//applications/shim/</loc>
-     <lastmod>2017-07-30</lastmod>
+     <lastmod>2017-08-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://github.com/AddRobots/addrobots_docs//applications/cart/</loc>
-     <lastmod>2017-07-30</lastmod>
+     <lastmod>2017-08-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
