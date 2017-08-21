@@ -1,4 +1,4 @@
-# AddRobots_MCU
+# AddRobots MCU
 
 ## Build Instructions
 

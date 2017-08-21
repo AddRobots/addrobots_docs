@@ -7,19 +7,20 @@ pages:
 - Home: index.md
 - Repos:
   - Overview: repos/repos.md
-  - VCU: repos/addrobots_vcu.md
-  - MCU: repos/addrobots_mcu.md
+  - Instructtions:
+    - ProtoBuf: repos/addrobots_proto.md
+    - VCU: repos/addrobots_vcu.md
+    - MCU: repos/addrobots_mcu.md
 - Contribute: about/contribute.md
 - License: about/license.md
 - ZeroDiff: about/zerodiff.md
 - Motor Messages:
   - General: messages/motor.md
-  - Message Types:
+  - Core Messages:
     - MotorCmd: messages/commands/motorcmd.md
     - MotorData: messages/data/motordata.md
   - Application Messages:
     - Robotic Cart: messages/application/cartcmds.md
-  - Code Generation: messages/processing.md
 - Applications:
   - Shim Application: applications/shim.md
   - Robotic Cart: applications/cart.md
