@@ -1,1 +1,1 @@
-We follow the ZeroDiff process to develop the AddRobots. You can read more about it [here](http://www.zerodiff.org)
+We follow the ZeroDiff process to develop the AddRobots. You can read more about it at: [http://www.zerodiff.org](http://www.zerodiff.org)

@@ -11,6 +11,7 @@ pages:
     - ProtoBuf: repos/addrobots_proto.md
     - VCU: repos/addrobots_vcu.md
     - MCU: repos/addrobots_mcu.md
+- Project Management: about/management.md
 - Contribute: about/contribute.md
 - License: about/license.md
 - ZeroDiff: about/zerodiff.md
