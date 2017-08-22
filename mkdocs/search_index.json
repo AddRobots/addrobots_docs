@@ -21,216 +21,6 @@
             "title": "Cloud Motors by Design"
         }, 
         {
-            "location": "/repos/repos/", 
-            "text": "The Project Repos\n\n\naddrobots_proto\n\n\nhttps://github.com/AddRobots/addrobots_proto\n     \n\n\nThe core protocol buffer message definitions. it also includes the top-level project documentation. (For convenience, this project also includes the high-level commands, encoded as protocol buffers, for the reference application.)\n\n\naddrobots_webconsole\n\n\nhttps://github.com/AddRobots/addrobots_webconsole\n\n\nA Firebase + ReactJS webapp that acts as a vehicle control console for the reference application.\n\n\naddrobots_service\n\n\nhttps://github.com/AddRobots/addrobots_service\n\n\nAn Android background service that tracks and controls the motors over the USB bus. It provides a simple message-passing API so that any high-level application (that has permission) can control the motors.\n\n\naddrobots_vcu\n\n\nhttps://github.com/AddRobots/addrobots_vcu\n\n\nThe android \"vehicle control unit\" reference application that combines drive logic with a PID loop that uses local sensor data, such as OpenCV, Firebase messaging, addrobots_service, and the local IMU.\n\n\naddrobots_mcu\n\n\nhttps://github.com/AddRobots/addrobots_mcu\n\n\nAn ARM CortexM4 based motor controller firmware that encodes/decodes the USB commands, drives the motor controller ICs, controls the PMIC, and collects/sends any sensor data (rotary encoder, PMIC values, etc).\n\n\naddrobots_pcb\n\n\nhttps://github.com/AddRobots/addrobots_pcb\n\n\nThe PCB designs for the motor control boards that physically attach to the motor.", 
-            "title": "Overview"
-        }, 
-        {
-            "location": "/repos/repos/#the-project-repos", 
-            "text": "", 
-            "title": "The Project Repos"
-        }, 
-        {
-            "location": "/repos/repos/#addrobots_proto", 
-            "text": "https://github.com/AddRobots/addrobots_proto        The core protocol buffer message definitions. it also includes the top-level project documentation. (For convenience, this project also includes the high-level commands, encoded as protocol buffers, for the reference application.)", 
-            "title": "addrobots_proto"
-        }, 
-        {
-            "location": "/repos/repos/#addrobots_webconsole", 
-            "text": "https://github.com/AddRobots/addrobots_webconsole  A Firebase + ReactJS webapp that acts as a vehicle control console for the reference application.", 
-            "title": "addrobots_webconsole"
-        }, 
-        {
-            "location": "/repos/repos/#addrobots_service", 
-            "text": "https://github.com/AddRobots/addrobots_service  An Android background service that tracks and controls the motors over the USB bus. It provides a simple message-passing API so that any high-level application (that has permission) can control the motors.", 
-            "title": "addrobots_service"
-        }, 
-        {
-            "location": "/repos/repos/#addrobots_vcu", 
-            "text": "https://github.com/AddRobots/addrobots_vcu  The android \"vehicle control unit\" reference application that combines drive logic with a PID loop that uses local sensor data, such as OpenCV, Firebase messaging, addrobots_service, and the local IMU.", 
-            "title": "addrobots_vcu"
-        }, 
-        {
-            "location": "/repos/repos/#addrobots_mcu", 
-            "text": "https://github.com/AddRobots/addrobots_mcu  An ARM CortexM4 based motor controller firmware that encodes/decodes the USB commands, drives the motor controller ICs, controls the PMIC, and collects/sends any sensor data (rotary encoder, PMIC values, etc).", 
-            "title": "addrobots_mcu"
-        }, 
-        {
-            "location": "/repos/repos/#addrobots_pcb", 
-            "text": "https://github.com/AddRobots/addrobots_pcb  The PCB designs for the motor control boards that physically attach to the motor.", 
-            "title": "addrobots_pcb"
-        }, 
-        {
-            "location": "/repos/addrobots_proto/", 
-            "text": "AddRobots Protocol Buffers\n\n\nMessage Processing\n\n\nThe addrobots_proto repo contains the protocol buffer message definitions. We process the raw proto files into code using the \nprotoc\n command.\n\n\nProtoc\n\n\nThe protoc command comes from the Google github repo: \nhttps://github.com/google/protobuf\n. How you build and install protoc is dependent on you. The commands below are correct for protoc v3.3.1.\n\n\nJava/Kotlin message generation\n\n\n cd ~/git/addrobots_proto/\n\n\n protoc --proto_path=./SourceMessages/ --java_out=./Production/Java/ ./SourceMessages/VehicleMsg.proto\n\n\n protoc --proto_path=./SourceMessages/ --java_out=./Production/Java/ ./SourceMessages/MotorMsg.proto\n\n\n\n\nJavascript message generation\n\n\n cd ~/git/addrobots_proto/\n\n\n protoc --proto_path=./SourceMessages/ --js_out=binary:./Production/Javascript/ ./SourceMessages/VehicleMsg.proto\n\n\n protoc --proto_path=./SourceMessages/ --js_out=binary:./Production/Javascript/ ./SourceMessages/MotorMsg.proto\n\n\n\n\nPython message generation\n\n\n cd ~/git/addrobots_proto/\n\n\n protoc --proto_path=./SourceMessages/ --python_out=./Production/Python/ ./SourceMessages/VehicleMsg.proto\n\n\n protoc --proto_path=./SourceMessages/ --python_out=./Production/Python/ ./SourceMessages/MotorMsg.proto\n\n\n\n\nNanoPB (C code for firmware)\n\n\nNanoPB Project\n\n\nIn order to run the below commands, we need to use the NanoPB project: \nhttps://github.com/nanopb/nanopb\n. Once you check out this repo, execute the following commands to generate the distribution version:\n\n\n cd ~/git/nanopb\n\n\n ./tools/make_XXX_package.sh (where XXX is [linux, mac or windows])\n\n\n\n\nThis will create a release directory in the NanoPB project's \ndist\n folder. Use the path to the created sub-folder in the commands below.\n\n\nCode Generation\n\n\n cd ~/git/addrobots_proto/Production\n\n\n protoc --plugin=nanopb=~/git/nanopb/dist/nanopb-0.3.8-28-g14efb1a-macosx-x86/generator/protoc-gen-nanopb --include_imports=~/git/nanopb/dist/nanopb-0.3.8-28-g14efb1a-macosx-x86/generator/proto/nanopb.proto --proto_path=../SourceMessages -o./MotorMsg.pb ../SourceMessages/MotorMsg.proto\n\n\n python ~/git/nanopb/dist/nanopb-0.3.8-28-g14efb1a-macosx-x86/generator/nanopb_generator.py -f ../SourceMessages/MotorMsg.options --output-dir=../Production/NanoPB MotorMsg.pb\n\n\n\n\n\n\nNanoPB Dist Folder Version\n\n\nThe reason for using the version in the dist folder is because we generated them using protoc v3.3.2 (locally) to support the \nproto3\n keyword in nanopb. At the moment (25JUL17) the NanoPB project does not support the \nproto3\n keyword in the default release code.", 
-            "title": "ProtoBuf"
-        }, 
-        {
-            "location": "/repos/addrobots_proto/#addrobots-protocol-buffers", 
-            "text": "", 
-            "title": "AddRobots Protocol Buffers"
-        }, 
-        {
-            "location": "/repos/addrobots_proto/#message-processing", 
-            "text": "The addrobots_proto repo contains the protocol buffer message definitions. We process the raw proto files into code using the  protoc  command.", 
-            "title": "Message Processing"
-        }, 
-        {
-            "location": "/repos/addrobots_proto/#protoc", 
-            "text": "The protoc command comes from the Google github repo:  https://github.com/google/protobuf . How you build and install protoc is dependent on you. The commands below are correct for protoc v3.3.1.", 
-            "title": "Protoc"
-        }, 
-        {
-            "location": "/repos/addrobots_proto/#javakotlin-message-generation", 
-            "text": "cd ~/git/addrobots_proto/  protoc --proto_path=./SourceMessages/ --java_out=./Production/Java/ ./SourceMessages/VehicleMsg.proto  protoc --proto_path=./SourceMessages/ --java_out=./Production/Java/ ./SourceMessages/MotorMsg.proto", 
-            "title": "Java/Kotlin message generation"
-        }, 
-        {
-            "location": "/repos/addrobots_proto/#javascript-message-generation", 
-            "text": "cd ~/git/addrobots_proto/  protoc --proto_path=./SourceMessages/ --js_out=binary:./Production/Javascript/ ./SourceMessages/VehicleMsg.proto  protoc --proto_path=./SourceMessages/ --js_out=binary:./Production/Javascript/ ./SourceMessages/MotorMsg.proto", 
-            "title": "Javascript message generation"
-        }, 
-        {
-            "location": "/repos/addrobots_proto/#python-message-generation", 
-            "text": "cd ~/git/addrobots_proto/  protoc --proto_path=./SourceMessages/ --python_out=./Production/Python/ ./SourceMessages/VehicleMsg.proto  protoc --proto_path=./SourceMessages/ --python_out=./Production/Python/ ./SourceMessages/MotorMsg.proto", 
-            "title": "Python message generation"
-        }, 
-        {
-            "location": "/repos/addrobots_proto/#nanopb-c-code-for-firmware", 
-            "text": "", 
-            "title": "NanoPB (C code for firmware)"
-        }, 
-        {
-            "location": "/repos/addrobots_proto/#nanopb-project", 
-            "text": "In order to run the below commands, we need to use the NanoPB project:  https://github.com/nanopb/nanopb . Once you check out this repo, execute the following commands to generate the distribution version:   cd ~/git/nanopb  ./tools/make_XXX_package.sh (where XXX is [linux, mac or windows])  This will create a release directory in the NanoPB project's  dist  folder. Use the path to the created sub-folder in the commands below.", 
-            "title": "NanoPB Project"
-        }, 
-        {
-            "location": "/repos/addrobots_proto/#code-generation", 
-            "text": "cd ~/git/addrobots_proto/Production  protoc --plugin=nanopb=~/git/nanopb/dist/nanopb-0.3.8-28-g14efb1a-macosx-x86/generator/protoc-gen-nanopb --include_imports=~/git/nanopb/dist/nanopb-0.3.8-28-g14efb1a-macosx-x86/generator/proto/nanopb.proto --proto_path=../SourceMessages -o./MotorMsg.pb ../SourceMessages/MotorMsg.proto  python ~/git/nanopb/dist/nanopb-0.3.8-28-g14efb1a-macosx-x86/generator/nanopb_generator.py -f ../SourceMessages/MotorMsg.options --output-dir=../Production/NanoPB MotorMsg.pb   NanoPB Dist Folder Version  The reason for using the version in the dist folder is because we generated them using protoc v3.3.2 (locally) to support the  proto3  keyword in nanopb. At the moment (25JUL17) the NanoPB project does not support the  proto3  keyword in the default release code.", 
-            "title": "Code Generation"
-        }, 
-        {
-            "location": "/repos/addrobots_vcu/", 
-            "text": "AddRobots VCU\n\n\nBuild Instructions\n\n\nThis is a pretty much a standard Android Studio project with two modules: \napp\n and \nopenCVLibrary\n. The project requires Android Studio's NDK native plugin, so you will need to use Android Studio 2.2+ and install the NDK libraries from the Android Studio SDK Manager.\n\n\nOpenCV\n\n\nWe started the project with the OpenCV module into an Android project: \nOpenCV4Android\n, but then heavily modified it to fully build the core OpenCV C/C++ library entirely within Android Studio. OpenCV4Android is in java and it requires OpenCV shared libraries for the relevant target CPU platform. Normally, you'd have to build these libraries separately and add them to the project. This project now builds these libraries directly from the OpenCV code during the normal Gradle build. This means, as long as the OpenCV main code is in a directory that's peered to this project, it will build these libraries using CMake and NDK directly from within the Android Studio project build with no manual intervention. (Tho' it takes a long time to build these libraries!) Whatever version of OpenCV you have in the peer directory, Android Studio will build it for you. (We've built 3.1.0, 3.2.0 and 3.3.0 and anticipate it will be easy to continue to upgrade OpenCV at any time.)\n\n\nThe way to organize this is:\n\n\nAndroidStudioProjects\n    opencv \n-- opencv 3.3.0 main project directly from github\n    addrobots_vcu \n-- directly from the github repo\n\n\n\n\nGradle in Android Studio can't deal with absolute paths, so you really need a structure like this one above, where the OpenCV main C/C++ source project is relative to the VCU project.\n\n\ncmake\n\n\nThe build from Android Studio will invoke a setup file \nandroid.toolchain.cmake\n, but this file is not correct to build OpenCV! There is a modified version of this file in the openCVLibrary submodule. Unfortunately, this file requires some knowledge of where it's installed, and for this reason, if you haven't used the directory structure from above, it will not be correct. The standard \nandroid.toolchain.cmake\n is sooo close, but it's not quite there yet (Google has been improving it a lot, and now it's just a handful of changes to make it work - hopefull they can make it work 100% with the standard file they ship with Android Studio NDK/CMake.)\n\n\nBuild Organization Improvements/Goals\n\n\n\n\nGet Gradle Plugin/RuleSource to accept absolute paths, so that we can put the FFmpeg (and later OpenCV) repos whenever we want. (e.g. ~/git).\n\n\nUse NDK to also natively build OpenCV from the raw git repo so that we can debug the sources.\n\n\nGeneralize the AutotoolsPlugin class so that it works with \nany\n autotools-based project.\n\n\nClean-up various messes. It's hard to know best practices in this part of Gradle and with the Android plugin since it's still somewhat new.", 
-            "title": "VCU"
-        }, 
-        {
-            "location": "/repos/addrobots_vcu/#addrobots-vcu", 
-            "text": "", 
-            "title": "AddRobots VCU"
-        }, 
-        {
-            "location": "/repos/addrobots_vcu/#build-instructions", 
-            "text": "This is a pretty much a standard Android Studio project with two modules:  app  and  openCVLibrary . The project requires Android Studio's NDK native plugin, so you will need to use Android Studio 2.2+ and install the NDK libraries from the Android Studio SDK Manager.", 
-            "title": "Build Instructions"
-        }, 
-        {
-            "location": "/repos/addrobots_vcu/#opencv", 
-            "text": "We started the project with the OpenCV module into an Android project:  OpenCV4Android , but then heavily modified it to fully build the core OpenCV C/C++ library entirely within Android Studio. OpenCV4Android is in java and it requires OpenCV shared libraries for the relevant target CPU platform. Normally, you'd have to build these libraries separately and add them to the project. This project now builds these libraries directly from the OpenCV code during the normal Gradle build. This means, as long as the OpenCV main code is in a directory that's peered to this project, it will build these libraries using CMake and NDK directly from within the Android Studio project build with no manual intervention. (Tho' it takes a long time to build these libraries!) Whatever version of OpenCV you have in the peer directory, Android Studio will build it for you. (We've built 3.1.0, 3.2.0 and 3.3.0 and anticipate it will be easy to continue to upgrade OpenCV at any time.)  The way to organize this is:  AndroidStudioProjects\n    opencv  -- opencv 3.3.0 main project directly from github\n    addrobots_vcu  -- directly from the github repo  Gradle in Android Studio can't deal with absolute paths, so you really need a structure like this one above, where the OpenCV main C/C++ source project is relative to the VCU project.", 
-            "title": "OpenCV"
-        }, 
-        {
-            "location": "/repos/addrobots_vcu/#cmake", 
-            "text": "The build from Android Studio will invoke a setup file  android.toolchain.cmake , but this file is not correct to build OpenCV! There is a modified version of this file in the openCVLibrary submodule. Unfortunately, this file requires some knowledge of where it's installed, and for this reason, if you haven't used the directory structure from above, it will not be correct. The standard  android.toolchain.cmake  is sooo close, but it's not quite there yet (Google has been improving it a lot, and now it's just a handful of changes to make it work - hopefull they can make it work 100% with the standard file they ship with Android Studio NDK/CMake.)", 
-            "title": "cmake"
-        }, 
-        {
-            "location": "/repos/addrobots_vcu/#build-organization-improvementsgoals", 
-            "text": "Get Gradle Plugin/RuleSource to accept absolute paths, so that we can put the FFmpeg (and later OpenCV) repos whenever we want. (e.g. ~/git).  Use NDK to also natively build OpenCV from the raw git repo so that we can debug the sources.  Generalize the AutotoolsPlugin class so that it works with  any  autotools-based project.  Clean-up various messes. It's hard to know best practices in this part of Gradle and with the Android plugin since it's still somewhat new.", 
-            "title": "Build Organization Improvements/Goals"
-        }, 
-        {
-            "location": "/repos/addrobots_mcu/", 
-            "text": "AddRobots MCU\n\n\nBuild Instructions\n\n\nThe project is a Kinetis Design Studio 3.x project (KDS 3.2.0) \nhttps://community.nxp.com/docs/DOC-330211\n \n\n\nIt takes advantage of the following projects:\n\n\n\n\nGNUARM Eclipse OpenOCD \nhttps://gnuarmeclipse.github.io/\n\n\nMCU on Eclipse Processor Expert beans \nhttps://mcuoneclipse.com/category/processor-expert/\n\n\n\n\nInstall the tools from these projects into KDS, and then open the project. Then select \nGenerate Processor Expert Code\n and that will generate code from the Process Expoert Beans. The project is likely in \nBuild Automatically\n mode which means the project will build all the code. If it's not, then select \nBuild Project\n. There will be a debug/run configuration called \naddrobots_mcu (OpenOCD KL22F) (release)\n that should run the code. It's a CMSIS/DAP program/run setup, so if there's compatible device on the USB bus, the IDE will program it and then run/debug the code.\n\n\nProject Improvements \n Goals\n\n\nNXP bought Freescale in 2016, and they soon deprecated KDS. They replaced it with a new IDE, MCU Xpresso that's not quite ready for a port of this project. It may be possible to bring Processor Expert into an Eclipse Neon version of MCU Xpresso: \nhttps://mcuoneclipse.com/2017/04/09/mcuxpresso-ide-installing-processor-expert-into-eclipse-neon/", 
-            "title": "MCU"
-        }, 
-        {
-            "location": "/repos/addrobots_mcu/#addrobots-mcu", 
-            "text": "", 
-            "title": "AddRobots MCU"
-        }, 
-        {
-            "location": "/repos/addrobots_mcu/#build-instructions", 
-            "text": "The project is a Kinetis Design Studio 3.x project (KDS 3.2.0)  https://community.nxp.com/docs/DOC-330211    It takes advantage of the following projects:   GNUARM Eclipse OpenOCD  https://gnuarmeclipse.github.io/  MCU on Eclipse Processor Expert beans  https://mcuoneclipse.com/category/processor-expert/   Install the tools from these projects into KDS, and then open the project. Then select  Generate Processor Expert Code  and that will generate code from the Process Expoert Beans. The project is likely in  Build Automatically  mode which means the project will build all the code. If it's not, then select  Build Project . There will be a debug/run configuration called  addrobots_mcu (OpenOCD KL22F) (release)  that should run the code. It's a CMSIS/DAP program/run setup, so if there's compatible device on the USB bus, the IDE will program it and then run/debug the code.", 
-            "title": "Build Instructions"
-        }, 
-        {
-            "location": "/repos/addrobots_mcu/#project-improvements-goals", 
-            "text": "NXP bought Freescale in 2016, and they soon deprecated KDS. They replaced it with a new IDE, MCU Xpresso that's not quite ready for a port of this project. It may be possible to bring Processor Expert into an Eclipse Neon version of MCU Xpresso:  https://mcuoneclipse.com/2017/04/09/mcuxpresso-ide-installing-processor-expert-into-eclipse-neon/", 
-            "title": "Project Improvements &amp; Goals"
-        }, 
-        {
-            "location": "/about/management/", 
-            "text": "Project Management\n\n\nIssues\n\n\nGithub project management allows us to collect issues from each repo into a central kanban management board here: \nhttps://github.com/orgs/AddRobots/projects/1\n \n\n\nEnter issues into the appropriate repo and then place them onto the board as appropriate.\n\n\nMilestones\n\n\nGithub project management cannot have it's own milestones, and it cannot track milestones from each repo. Instead, create milestones within each repo that apply to that repo only. This is not a problem since we run sprints separately on each repo.\n\n\nSprints\n\n\nJen DeWalt has an excellent guide for how to manage sprints from within Github. \nhttps://zube.io/blog/agile-project-management-workflow-for-github-issues/\n. We mostly follow this process, except that there are many repos across the project, so each repo has its own sprint.", 
-            "title": "Project Management"
-        }, 
-        {
-            "location": "/about/management/#project-management", 
-            "text": "", 
-            "title": "Project Management"
-        }, 
-        {
-            "location": "/about/management/#issues", 
-            "text": "Github project management allows us to collect issues from each repo into a central kanban management board here:  https://github.com/orgs/AddRobots/projects/1    Enter issues into the appropriate repo and then place them onto the board as appropriate.", 
-            "title": "Issues"
-        }, 
-        {
-            "location": "/about/management/#milestones", 
-            "text": "Github project management cannot have it's own milestones, and it cannot track milestones from each repo. Instead, create milestones within each repo that apply to that repo only. This is not a problem since we run sprints separately on each repo.", 
-            "title": "Milestones"
-        }, 
-        {
-            "location": "/about/management/#sprints", 
-            "text": "Jen DeWalt has an excellent guide for how to manage sprints from within Github.  https://zube.io/blog/agile-project-management-workflow-for-github-issues/ . We mostly follow this process, except that there are many repos across the project, so each repo has its own sprint.", 
-            "title": "Sprints"
-        }, 
-        {
-            "location": "/about/contribute/", 
-            "text": "Contribute\n\n\nAddRobots docs use \nmkdocs\n and committed it all to github. This setup not only generates nice-looking, searchable documentation, it makes it possible to share/fork it so that AddRobots can be a community effort.\n\n\nThe mkdocs system is a self-contained, Python-based documentation tool that uses Twitter Bootstrap and scripting to generate high-quality HTML-based documentation using simple markdown files. The cool thing about mkdocs is that the repo is both the documentation set and place to generate the static, production site. The top-level mkdocs.yml file shows the documentation tree structure and configurations. If you edit this file, it will be pretty easy to see what markdown (*.md) files you need to edit in order to change the docs you want changed.\n\n\nInstalling Python and mkdocs.\n\n\nPlease see the mkdocs website to see how to install Python and the mkdocs tools. It's pretty simple and easy to do this, but it's out-of-scope to explain that here.\n\n\nEditing the docs\n\n\nFrom a terminal session change to the top-level directory\n\n\n    \ncd ~/git/addrobots_docs\n    \nmkdocs serve\n\n\n\n\nNow from your browser go to the URL: \nhttp://127.0.0.1:8000\n\n\nAs you edit the markdown files, mkdocs automatically updates the website in realtime so that you can review your changes.\n\n\nGenerating the Static Documentation Website\n\n\nOnce you've completed all of your edits, you need to generate the static site (not committed to git because \"./site\" is in .gitignore).\n\n\n    \ncd ~/git/addrobots_docs\n    \nmkdocs build\n\n\n\n\nThis will generate a static documentation site in the directory ~/git/addrobots_docs/site. You can validate the site by killing the \"mkdocs serve\" process and starting a simple Python=-based web server in that directory:\n\n\n    \ncd ~/git/addrobots_docs/site\n    \npython -m SimpleHTTPServer 8000\n\n\n\n\nNow from your browser go to the URL: \nhttp://127.0.0.1:8000\n\n\nCommit the Static Site to Github Project Pages (\"gh-pages\")\n\n\n    \ncd ~/git/addrobots_docs\n    \nmkdocs gh-deploy --clean\n\n\n\n\nThis command will generate the static site and push it to the gh-pages branch so that it shows up as a searchable, shred website (on github). The url will be \nhttps://your_github_id.github.io/addrobots_docs/\n.", 
-            "title": "Contribute"
-        }, 
-        {
-            "location": "/about/contribute/#contribute", 
-            "text": "AddRobots docs use  mkdocs  and committed it all to github. This setup not only generates nice-looking, searchable documentation, it makes it possible to share/fork it so that AddRobots can be a community effort.  The mkdocs system is a self-contained, Python-based documentation tool that uses Twitter Bootstrap and scripting to generate high-quality HTML-based documentation using simple markdown files. The cool thing about mkdocs is that the repo is both the documentation set and place to generate the static, production site. The top-level mkdocs.yml file shows the documentation tree structure and configurations. If you edit this file, it will be pretty easy to see what markdown (*.md) files you need to edit in order to change the docs you want changed.", 
-            "title": "Contribute"
-        }, 
-        {
-            "location": "/about/contribute/#installing-python-and-mkdocs", 
-            "text": "Please see the mkdocs website to see how to install Python and the mkdocs tools. It's pretty simple and easy to do this, but it's out-of-scope to explain that here.", 
-            "title": "Installing Python and mkdocs."
-        }, 
-        {
-            "location": "/about/contribute/#editing-the-docs", 
-            "text": "From a terminal session change to the top-level directory       cd ~/git/addrobots_docs\n     mkdocs serve  Now from your browser go to the URL:  http://127.0.0.1:8000  As you edit the markdown files, mkdocs automatically updates the website in realtime so that you can review your changes.", 
-            "title": "Editing the docs"
-        }, 
-        {
-            "location": "/about/contribute/#generating-the-static-documentation-website", 
-            "text": "Once you've completed all of your edits, you need to generate the static site (not committed to git because \"./site\" is in .gitignore).       cd ~/git/addrobots_docs\n     mkdocs build  This will generate a static documentation site in the directory ~/git/addrobots_docs/site. You can validate the site by killing the \"mkdocs serve\" process and starting a simple Python=-based web server in that directory:       cd ~/git/addrobots_docs/site\n     python -m SimpleHTTPServer 8000  Now from your browser go to the URL:  http://127.0.0.1:8000", 
-            "title": "Generating the Static Documentation Website"
-        }, 
-        {
-            "location": "/about/contribute/#commit-the-static-site-to-github-project-pages-gh-pages", 
-            "text": "cd ~/git/addrobots_docs\n     mkdocs gh-deploy --clean  This command will generate the static site and push it to the gh-pages branch so that it shows up as a searchable, shred website (on github). The url will be  https://your_github_id.github.io/addrobots_docs/ .", 
-            "title": "Commit the Static Site to Github Project Pages (\"gh-pages\")"
-        }, 
-        {
-            "location": "/about/license/", 
-            "text": "BSD License\n\n\nCopyright (c) 2016, Jeff Williams\nAll rights reserved.\n\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n    * Redistributions of source code must retain the above copyright\n      notice, this list of conditions and the following disclaimer.\n    * Redistributions in binary form must reproduce the above copyright\n      notice, this list of conditions and the following disclaimer in the\n      documentation and/or other materials provided with the distribution.\n    * Neither the name of the \n nor the\n      names of its contributors may be used to endorse or promote products\n      derived from this software without specific prior written permission.\n\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL \n BE LIABLE FOR ANY\nDIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\nON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.", 
-            "title": "License"
-        }, 
-        {
-            "location": "/about/license/#bsd-license", 
-            "text": "Copyright (c) 2016, Jeff Williams\nAll rights reserved.  Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n    * Redistributions of source code must retain the above copyright\n      notice, this list of conditions and the following disclaimer.\n    * Redistributions in binary form must reproduce the above copyright\n      notice, this list of conditions and the following disclaimer in the\n      documentation and/or other materials provided with the distribution.\n    * Neither the name of the   nor the\n      names of its contributors may be used to endorse or promote products\n      derived from this software without specific prior written permission.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL   BE LIABLE FOR ANY\nDIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\nON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.", 
-            "title": "BSD License"
-        }, 
-        {
-            "location": "/about/zerodiff/", 
-            "text": "We follow the ZeroDiff process to develop the AddRobots. You can read more about it at: \nhttp://www.zerodiff.org", 
-            "title": "ZeroDiff"
-        }, 
-        {
             "location": "/messages/motor/", 
             "text": "Motor Messages\n\n\nThe system uses Google protocol buffers to encode all messages sent/received by the various subsystems. The top-level motor message contains two fields, a UUID to address the message to a particular motor followed by a union field that contains either a MotorCmd or MotorData. The MotorMsg.proto file contains the following definition for the top-level motor message:\n\n\nmessage MotorMsg {\n    string uuid = 1;\n    oneof content {\n        MotorData motorData = 2;\n        MotorCmd motorCmd = 3;\n    }\n}\n\n\n\n\nUUID\n\n\nThe motor's universally unique ID as a string. Identifying the motors by UUID means we do not need a central authority to mint new motors that are uniquely addressable.  Any of the UUID encoding formats are fine as long as the stored value is the canonical string representation of 32 base16 digits in the form \n8-4-4-4-12\n for a total of 36 characters.", 
             "title": "General"
@@ -499,6 +289,216 @@
             "location": "/applications/cart/#robotic-cart-reference-application", 
             "text": "The project comes with a reference application that converts a wire cart or z-rack into autonomous, remote-drive vehicle. The cloud application encodes high-level, application-specific commands (e.g. \"drive\", \"stop\", \"orbit\", etc.) into protobuf messages that it sends to an Android application. The Android application is a fairly typical high-level vehicle control system with a PID loop fed by phone's sensor array: camera/optical-flow, compass heading, acceleration/tilt and so on. The PID control code converts these high-level application commands into low-level motor commands that it sends to a central background service that gets them onto the USB bus. This Android application only as as a fun project to get you familiar with how the stack works.", 
             "title": "Robotic Cart Reference Application"
+        }, 
+        {
+            "location": "/about/management/", 
+            "text": "Project Management\n\n\nIssues\n\n\nGithub project management allows us to collect issues from each repo into a central kanban management board here: \nhttps://github.com/orgs/AddRobots/projects/1\n \n\n\nEnter issues into the appropriate repo and then place them onto the board as appropriate.\n\n\nMilestones\n\n\nGithub project management cannot have it's own milestones, and it cannot track milestones from each repo. Instead, create milestones within each repo that apply to that repo only. This is not a problem since we run sprints separately on each repo.\n\n\nSprints\n\n\nJen DeWalt has an excellent guide for how to manage sprints from within Github. \nhttps://zube.io/blog/agile-project-management-workflow-for-github-issues/\n. We mostly follow this process, except that there are many repos across the project, so each repo has its own sprint.", 
+            "title": "Project Management"
+        }, 
+        {
+            "location": "/about/management/#project-management", 
+            "text": "", 
+            "title": "Project Management"
+        }, 
+        {
+            "location": "/about/management/#issues", 
+            "text": "Github project management allows us to collect issues from each repo into a central kanban management board here:  https://github.com/orgs/AddRobots/projects/1    Enter issues into the appropriate repo and then place them onto the board as appropriate.", 
+            "title": "Issues"
+        }, 
+        {
+            "location": "/about/management/#milestones", 
+            "text": "Github project management cannot have it's own milestones, and it cannot track milestones from each repo. Instead, create milestones within each repo that apply to that repo only. This is not a problem since we run sprints separately on each repo.", 
+            "title": "Milestones"
+        }, 
+        {
+            "location": "/about/management/#sprints", 
+            "text": "Jen DeWalt has an excellent guide for how to manage sprints from within Github.  https://zube.io/blog/agile-project-management-workflow-for-github-issues/ . We mostly follow this process, except that there are many repos across the project, so each repo has its own sprint.", 
+            "title": "Sprints"
+        }, 
+        {
+            "location": "/repos/repos/", 
+            "text": "The Project Repos\n\n\naddrobots_proto\n\n\nhttps://github.com/AddRobots/addrobots_proto\n     \n\n\nThe core protocol buffer message definitions. it also includes the top-level project documentation. (For convenience, this project also includes the high-level commands, encoded as protocol buffers, for the reference application.)\n\n\naddrobots_webconsole\n\n\nhttps://github.com/AddRobots/addrobots_webconsole\n\n\nA Firebase + ReactJS webapp that acts as a vehicle control console for the reference application.\n\n\naddrobots_service\n\n\nhttps://github.com/AddRobots/addrobots_service\n\n\nAn Android background service that tracks and controls the motors over the USB bus. It provides a simple message-passing API so that any high-level application (that has permission) can control the motors.\n\n\naddrobots_vcu\n\n\nhttps://github.com/AddRobots/addrobots_vcu\n\n\nThe android \"vehicle control unit\" reference application that combines drive logic with a PID loop that uses local sensor data, such as OpenCV, Firebase messaging, addrobots_service, and the local IMU.\n\n\naddrobots_mcu\n\n\nhttps://github.com/AddRobots/addrobots_mcu\n\n\nAn ARM CortexM4 based motor controller firmware that encodes/decodes the USB commands, drives the motor controller ICs, controls the PMIC, and collects/sends any sensor data (rotary encoder, PMIC values, etc).\n\n\naddrobots_pcb\n\n\nhttps://github.com/AddRobots/addrobots_pcb\n\n\nThe PCB designs for the motor control boards that physically attach to the motor.", 
+            "title": "Overview"
+        }, 
+        {
+            "location": "/repos/repos/#the-project-repos", 
+            "text": "", 
+            "title": "The Project Repos"
+        }, 
+        {
+            "location": "/repos/repos/#addrobots_proto", 
+            "text": "https://github.com/AddRobots/addrobots_proto        The core protocol buffer message definitions. it also includes the top-level project documentation. (For convenience, this project also includes the high-level commands, encoded as protocol buffers, for the reference application.)", 
+            "title": "addrobots_proto"
+        }, 
+        {
+            "location": "/repos/repos/#addrobots_webconsole", 
+            "text": "https://github.com/AddRobots/addrobots_webconsole  A Firebase + ReactJS webapp that acts as a vehicle control console for the reference application.", 
+            "title": "addrobots_webconsole"
+        }, 
+        {
+            "location": "/repos/repos/#addrobots_service", 
+            "text": "https://github.com/AddRobots/addrobots_service  An Android background service that tracks and controls the motors over the USB bus. It provides a simple message-passing API so that any high-level application (that has permission) can control the motors.", 
+            "title": "addrobots_service"
+        }, 
+        {
+            "location": "/repos/repos/#addrobots_vcu", 
+            "text": "https://github.com/AddRobots/addrobots_vcu  The android \"vehicle control unit\" reference application that combines drive logic with a PID loop that uses local sensor data, such as OpenCV, Firebase messaging, addrobots_service, and the local IMU.", 
+            "title": "addrobots_vcu"
+        }, 
+        {
+            "location": "/repos/repos/#addrobots_mcu", 
+            "text": "https://github.com/AddRobots/addrobots_mcu  An ARM CortexM4 based motor controller firmware that encodes/decodes the USB commands, drives the motor controller ICs, controls the PMIC, and collects/sends any sensor data (rotary encoder, PMIC values, etc).", 
+            "title": "addrobots_mcu"
+        }, 
+        {
+            "location": "/repos/repos/#addrobots_pcb", 
+            "text": "https://github.com/AddRobots/addrobots_pcb  The PCB designs for the motor control boards that physically attach to the motor.", 
+            "title": "addrobots_pcb"
+        }, 
+        {
+            "location": "/repos/addrobots_proto/", 
+            "text": "AddRobots Protocol Buffers\n\n\nMessage Processing\n\n\nThe addrobots_proto repo contains the protocol buffer message definitions. We process the raw proto files into code using the \nprotoc\n command.\n\n\nProtoc\n\n\nThe protoc command comes from the Google github repo: \nhttps://github.com/google/protobuf\n. How you build and install protoc is dependent on you. The commands below are correct for protoc v3.3.1.\n\n\nJava/Kotlin message generation\n\n\n cd ~/git/addrobots_proto/\n\n\n protoc --proto_path=./SourceMessages/ --java_out=./Production/Java/ ./SourceMessages/VehicleMsg.proto\n\n\n protoc --proto_path=./SourceMessages/ --java_out=./Production/Java/ ./SourceMessages/MotorMsg.proto\n\n\n\n\nJavascript message generation\n\n\n cd ~/git/addrobots_proto/\n\n\n protoc --proto_path=./SourceMessages/ --js_out=binary:./Production/Javascript/ ./SourceMessages/VehicleMsg.proto\n\n\n protoc --proto_path=./SourceMessages/ --js_out=binary:./Production/Javascript/ ./SourceMessages/MotorMsg.proto\n\n\n\n\nPython message generation\n\n\n cd ~/git/addrobots_proto/\n\n\n protoc --proto_path=./SourceMessages/ --python_out=./Production/Python/ ./SourceMessages/VehicleMsg.proto\n\n\n protoc --proto_path=./SourceMessages/ --python_out=./Production/Python/ ./SourceMessages/MotorMsg.proto\n\n\n\n\nNanoPB (C code for firmware)\n\n\nNanoPB Project\n\n\nIn order to run the below commands, we need to use the NanoPB project: \nhttps://github.com/nanopb/nanopb\n. Once you check out this repo, execute the following commands to generate the distribution version:\n\n\n cd ~/git/nanopb\n\n\n ./tools/make_XXX_package.sh (where XXX is [linux, mac or windows])\n\n\n\n\nThis will create a release directory in the NanoPB project's \ndist\n folder. Use the path to the created sub-folder in the commands below.\n\n\nCode Generation\n\n\n cd ~/git/addrobots_proto/Production\n\n\n protoc --plugin=nanopb=~/git/nanopb/dist/nanopb-0.3.8-28-g14efb1a-macosx-x86/generator/protoc-gen-nanopb --include_imports=~/git/nanopb/dist/nanopb-0.3.8-28-g14efb1a-macosx-x86/generator/proto/nanopb.proto --proto_path=../SourceMessages -o./MotorMsg.pb ../SourceMessages/MotorMsg.proto\n\n\n python ~/git/nanopb/dist/nanopb-0.3.8-28-g14efb1a-macosx-x86/generator/nanopb_generator.py -f ../SourceMessages/MotorMsg.options --output-dir=../Production/NanoPB MotorMsg.pb\n\n\n\n\n\n\nNanoPB Dist Folder Version\n\n\nThe reason for using the version in the dist folder is because we generated them using protoc v3.3.2 (locally) to support the \nproto3\n keyword in nanopb. At the moment (25JUL17) the NanoPB project does not support the \nproto3\n keyword in the default release code.", 
+            "title": "ProtoBuf"
+        }, 
+        {
+            "location": "/repos/addrobots_proto/#addrobots-protocol-buffers", 
+            "text": "", 
+            "title": "AddRobots Protocol Buffers"
+        }, 
+        {
+            "location": "/repos/addrobots_proto/#message-processing", 
+            "text": "The addrobots_proto repo contains the protocol buffer message definitions. We process the raw proto files into code using the  protoc  command.", 
+            "title": "Message Processing"
+        }, 
+        {
+            "location": "/repos/addrobots_proto/#protoc", 
+            "text": "The protoc command comes from the Google github repo:  https://github.com/google/protobuf . How you build and install protoc is dependent on you. The commands below are correct for protoc v3.3.1.", 
+            "title": "Protoc"
+        }, 
+        {
+            "location": "/repos/addrobots_proto/#javakotlin-message-generation", 
+            "text": "cd ~/git/addrobots_proto/  protoc --proto_path=./SourceMessages/ --java_out=./Production/Java/ ./SourceMessages/VehicleMsg.proto  protoc --proto_path=./SourceMessages/ --java_out=./Production/Java/ ./SourceMessages/MotorMsg.proto", 
+            "title": "Java/Kotlin message generation"
+        }, 
+        {
+            "location": "/repos/addrobots_proto/#javascript-message-generation", 
+            "text": "cd ~/git/addrobots_proto/  protoc --proto_path=./SourceMessages/ --js_out=binary:./Production/Javascript/ ./SourceMessages/VehicleMsg.proto  protoc --proto_path=./SourceMessages/ --js_out=binary:./Production/Javascript/ ./SourceMessages/MotorMsg.proto", 
+            "title": "Javascript message generation"
+        }, 
+        {
+            "location": "/repos/addrobots_proto/#python-message-generation", 
+            "text": "cd ~/git/addrobots_proto/  protoc --proto_path=./SourceMessages/ --python_out=./Production/Python/ ./SourceMessages/VehicleMsg.proto  protoc --proto_path=./SourceMessages/ --python_out=./Production/Python/ ./SourceMessages/MotorMsg.proto", 
+            "title": "Python message generation"
+        }, 
+        {
+            "location": "/repos/addrobots_proto/#nanopb-c-code-for-firmware", 
+            "text": "", 
+            "title": "NanoPB (C code for firmware)"
+        }, 
+        {
+            "location": "/repos/addrobots_proto/#nanopb-project", 
+            "text": "In order to run the below commands, we need to use the NanoPB project:  https://github.com/nanopb/nanopb . Once you check out this repo, execute the following commands to generate the distribution version:   cd ~/git/nanopb  ./tools/make_XXX_package.sh (where XXX is [linux, mac or windows])  This will create a release directory in the NanoPB project's  dist  folder. Use the path to the created sub-folder in the commands below.", 
+            "title": "NanoPB Project"
+        }, 
+        {
+            "location": "/repos/addrobots_proto/#code-generation", 
+            "text": "cd ~/git/addrobots_proto/Production  protoc --plugin=nanopb=~/git/nanopb/dist/nanopb-0.3.8-28-g14efb1a-macosx-x86/generator/protoc-gen-nanopb --include_imports=~/git/nanopb/dist/nanopb-0.3.8-28-g14efb1a-macosx-x86/generator/proto/nanopb.proto --proto_path=../SourceMessages -o./MotorMsg.pb ../SourceMessages/MotorMsg.proto  python ~/git/nanopb/dist/nanopb-0.3.8-28-g14efb1a-macosx-x86/generator/nanopb_generator.py -f ../SourceMessages/MotorMsg.options --output-dir=../Production/NanoPB MotorMsg.pb   NanoPB Dist Folder Version  The reason for using the version in the dist folder is because we generated them using protoc v3.3.2 (locally) to support the  proto3  keyword in nanopb. At the moment (25JUL17) the NanoPB project does not support the  proto3  keyword in the default release code.", 
+            "title": "Code Generation"
+        }, 
+        {
+            "location": "/repos/addrobots_vcu/", 
+            "text": "AddRobots VCU\n\n\nBuild Instructions\n\n\nThis is a pretty much a standard Android Studio project with two modules: \napp\n and \nopenCVLibrary\n. The project requires Android Studio's NDK native plugin, so you will need to use Android Studio 2.2+ and install the NDK libraries from the Android Studio SDK Manager.\n\n\nOpenCV\n\n\nWe started the project with the OpenCV module into an Android project: \nOpenCV4Android\n, but then heavily modified it to fully build the core OpenCV C/C++ library entirely within Android Studio. OpenCV4Android is in java and it requires OpenCV shared libraries for the relevant target CPU platform. Normally, you'd have to build these libraries separately and add them to the project. This project now builds these libraries directly from the OpenCV code during the normal Gradle build. This means, as long as the OpenCV main code is in a directory that's peered to this project, it will build these libraries using CMake and NDK directly from within the Android Studio project build with no manual intervention. (Tho' it takes a long time to build these libraries!) Whatever version of OpenCV you have in the peer directory, Android Studio will build it for you. (We've built 3.1.0, 3.2.0 and 3.3.0 and anticipate it will be easy to continue to upgrade OpenCV at any time.)\n\n\nThe way to organize this is:\n\n\nAndroidStudioProjects\n    opencv \n-- opencv 3.3.0 main project directly from github\n    addrobots_vcu \n-- directly from the github repo\n\n\n\n\nGradle in Android Studio can't deal with absolute paths, so you really need a structure like this one above, where the OpenCV main C/C++ source project is relative to the VCU project.\n\n\ncmake\n\n\nThe build from Android Studio will invoke a setup file \nandroid.toolchain.cmake\n, but this file is not correct to build OpenCV! There is a modified version of this file in the openCVLibrary submodule. Unfortunately, this file requires some knowledge of where it's installed, and for this reason, if you haven't used the directory structure from above, it will not be correct. The standard \nandroid.toolchain.cmake\n is sooo close, but it's not quite there yet (Google has been improving it a lot, and now it's just a handful of changes to make it work - hopefull they can make it work 100% with the standard file they ship with Android Studio NDK/CMake.)\n\n\nBuild Organization Improvements/Goals\n\n\n\n\nGet Gradle Plugin/RuleSource to accept absolute paths, so that we can put the FFmpeg (and later OpenCV) repos whenever we want. (e.g. ~/git).\n\n\nUse NDK to also natively build OpenCV from the raw git repo so that we can debug the sources.\n\n\nGeneralize the AutotoolsPlugin class so that it works with \nany\n autotools-based project.\n\n\nClean-up various messes. It's hard to know best practices in this part of Gradle and with the Android plugin since it's still somewhat new.", 
+            "title": "VCU"
+        }, 
+        {
+            "location": "/repos/addrobots_vcu/#addrobots-vcu", 
+            "text": "", 
+            "title": "AddRobots VCU"
+        }, 
+        {
+            "location": "/repos/addrobots_vcu/#build-instructions", 
+            "text": "This is a pretty much a standard Android Studio project with two modules:  app  and  openCVLibrary . The project requires Android Studio's NDK native plugin, so you will need to use Android Studio 2.2+ and install the NDK libraries from the Android Studio SDK Manager.", 
+            "title": "Build Instructions"
+        }, 
+        {
+            "location": "/repos/addrobots_vcu/#opencv", 
+            "text": "We started the project with the OpenCV module into an Android project:  OpenCV4Android , but then heavily modified it to fully build the core OpenCV C/C++ library entirely within Android Studio. OpenCV4Android is in java and it requires OpenCV shared libraries for the relevant target CPU platform. Normally, you'd have to build these libraries separately and add them to the project. This project now builds these libraries directly from the OpenCV code during the normal Gradle build. This means, as long as the OpenCV main code is in a directory that's peered to this project, it will build these libraries using CMake and NDK directly from within the Android Studio project build with no manual intervention. (Tho' it takes a long time to build these libraries!) Whatever version of OpenCV you have in the peer directory, Android Studio will build it for you. (We've built 3.1.0, 3.2.0 and 3.3.0 and anticipate it will be easy to continue to upgrade OpenCV at any time.)  The way to organize this is:  AndroidStudioProjects\n    opencv  -- opencv 3.3.0 main project directly from github\n    addrobots_vcu  -- directly from the github repo  Gradle in Android Studio can't deal with absolute paths, so you really need a structure like this one above, where the OpenCV main C/C++ source project is relative to the VCU project.", 
+            "title": "OpenCV"
+        }, 
+        {
+            "location": "/repos/addrobots_vcu/#cmake", 
+            "text": "The build from Android Studio will invoke a setup file  android.toolchain.cmake , but this file is not correct to build OpenCV! There is a modified version of this file in the openCVLibrary submodule. Unfortunately, this file requires some knowledge of where it's installed, and for this reason, if you haven't used the directory structure from above, it will not be correct. The standard  android.toolchain.cmake  is sooo close, but it's not quite there yet (Google has been improving it a lot, and now it's just a handful of changes to make it work - hopefull they can make it work 100% with the standard file they ship with Android Studio NDK/CMake.)", 
+            "title": "cmake"
+        }, 
+        {
+            "location": "/repos/addrobots_vcu/#build-organization-improvementsgoals", 
+            "text": "Get Gradle Plugin/RuleSource to accept absolute paths, so that we can put the FFmpeg (and later OpenCV) repos whenever we want. (e.g. ~/git).  Use NDK to also natively build OpenCV from the raw git repo so that we can debug the sources.  Generalize the AutotoolsPlugin class so that it works with  any  autotools-based project.  Clean-up various messes. It's hard to know best practices in this part of Gradle and with the Android plugin since it's still somewhat new.", 
+            "title": "Build Organization Improvements/Goals"
+        }, 
+        {
+            "location": "/repos/addrobots_mcu/", 
+            "text": "AddRobots MCU\n\n\nBuild Instructions\n\n\nThe project is a Kinetis Design Studio 3.x project (KDS 3.2.0) \nhttps://community.nxp.com/docs/DOC-330211\n \n\n\nIt takes advantage of the following projects:\n\n\n\n\nGNUARM Eclipse OpenOCD \nhttps://gnuarmeclipse.github.io/\n\n\nMCU on Eclipse Processor Expert beans \nhttps://mcuoneclipse.com/category/processor-expert/\n\n\n\n\nInstall the tools from these projects into KDS, and then open the project. Then select \nGenerate Processor Expert Code\n and that will generate code from the Process Expoert Beans. The project is likely in \nBuild Automatically\n mode which means the project will build all the code. If it's not, then select \nBuild Project\n. There will be a debug/run configuration called \naddrobots_mcu (OpenOCD KL22F) (release)\n that should run the code. It's a CMSIS/DAP program/run setup, so if there's compatible device on the USB bus, the IDE will program it and then run/debug the code.\n\n\nProject Improvements \n Goals\n\n\nNXP bought Freescale in 2016, and they soon deprecated KDS. They replaced it with a new IDE, MCU Xpresso that's not quite ready for a port of this project. It may be possible to bring Processor Expert into an Eclipse Neon version of MCU Xpresso: \nhttps://mcuoneclipse.com/2017/04/09/mcuxpresso-ide-installing-processor-expert-into-eclipse-neon/", 
+            "title": "MCU"
+        }, 
+        {
+            "location": "/repos/addrobots_mcu/#addrobots-mcu", 
+            "text": "", 
+            "title": "AddRobots MCU"
+        }, 
+        {
+            "location": "/repos/addrobots_mcu/#build-instructions", 
+            "text": "The project is a Kinetis Design Studio 3.x project (KDS 3.2.0)  https://community.nxp.com/docs/DOC-330211    It takes advantage of the following projects:   GNUARM Eclipse OpenOCD  https://gnuarmeclipse.github.io/  MCU on Eclipse Processor Expert beans  https://mcuoneclipse.com/category/processor-expert/   Install the tools from these projects into KDS, and then open the project. Then select  Generate Processor Expert Code  and that will generate code from the Process Expoert Beans. The project is likely in  Build Automatically  mode which means the project will build all the code. If it's not, then select  Build Project . There will be a debug/run configuration called  addrobots_mcu (OpenOCD KL22F) (release)  that should run the code. It's a CMSIS/DAP program/run setup, so if there's compatible device on the USB bus, the IDE will program it and then run/debug the code.", 
+            "title": "Build Instructions"
+        }, 
+        {
+            "location": "/repos/addrobots_mcu/#project-improvements-goals", 
+            "text": "NXP bought Freescale in 2016, and they soon deprecated KDS. They replaced it with a new IDE, MCU Xpresso that's not quite ready for a port of this project. It may be possible to bring Processor Expert into an Eclipse Neon version of MCU Xpresso:  https://mcuoneclipse.com/2017/04/09/mcuxpresso-ide-installing-processor-expert-into-eclipse-neon/", 
+            "title": "Project Improvements &amp; Goals"
+        }, 
+        {
+            "location": "/about/contribute/", 
+            "text": "Contribute\n\n\nAddRobots docs use \nmkdocs\n and committed it all to github. This setup not only generates nice-looking, searchable documentation, it makes it possible to share/fork it so that AddRobots can be a community effort.\n\n\nThe mkdocs system is a self-contained, Python-based documentation tool that uses Twitter Bootstrap and scripting to generate high-quality HTML-based documentation using simple markdown files. The cool thing about mkdocs is that the repo is both the documentation set and place to generate the static, production site. The top-level mkdocs.yml file shows the documentation tree structure and configurations. If you edit this file, it will be pretty easy to see what markdown (*.md) files you need to edit in order to change the docs you want changed.\n\n\nInstalling Python and mkdocs.\n\n\nPlease see the mkdocs website to see how to install Python and the mkdocs tools. It's pretty simple and easy to do this, but it's out-of-scope to explain that here.\n\n\nEditing the docs\n\n\nFrom a terminal session change to the top-level directory\n\n\n    \ncd ~/git/addrobots_docs\n    \nmkdocs serve\n\n\n\n\nNow from your browser go to the URL: \nhttp://127.0.0.1:8000\n\n\nAs you edit the markdown files, mkdocs automatically updates the website in realtime so that you can review your changes.\n\n\nGenerating the Static Documentation Website\n\n\nOnce you've completed all of your edits, you need to generate the static site (not committed to git because \"./site\" is in .gitignore).\n\n\n    \ncd ~/git/addrobots_docs\n    \nmkdocs build\n\n\n\n\nThis will generate a static documentation site in the directory ~/git/addrobots_docs/site. You can validate the site by killing the \"mkdocs serve\" process and starting a simple Python=-based web server in that directory:\n\n\n    \ncd ~/git/addrobots_docs/site\n    \npython -m SimpleHTTPServer 8000\n\n\n\n\nNow from your browser go to the URL: \nhttp://127.0.0.1:8000\n\n\nCommit the Static Site to Github Project Pages (\"gh-pages\")\n\n\n    \ncd ~/git/addrobots_docs\n    \nmkdocs gh-deploy --clean\n\n\n\n\nThis command will generate the static site and push it to the gh-pages branch so that it shows up as a searchable, shred website (on github). The url will be \nhttps://your_github_id.github.io/addrobots_docs/\n.", 
+            "title": "Contribute"
+        }, 
+        {
+            "location": "/about/contribute/#contribute", 
+            "text": "AddRobots docs use  mkdocs  and committed it all to github. This setup not only generates nice-looking, searchable documentation, it makes it possible to share/fork it so that AddRobots can be a community effort.  The mkdocs system is a self-contained, Python-based documentation tool that uses Twitter Bootstrap and scripting to generate high-quality HTML-based documentation using simple markdown files. The cool thing about mkdocs is that the repo is both the documentation set and place to generate the static, production site. The top-level mkdocs.yml file shows the documentation tree structure and configurations. If you edit this file, it will be pretty easy to see what markdown (*.md) files you need to edit in order to change the docs you want changed.", 
+            "title": "Contribute"
+        }, 
+        {
+            "location": "/about/contribute/#installing-python-and-mkdocs", 
+            "text": "Please see the mkdocs website to see how to install Python and the mkdocs tools. It's pretty simple and easy to do this, but it's out-of-scope to explain that here.", 
+            "title": "Installing Python and mkdocs."
+        }, 
+        {
+            "location": "/about/contribute/#editing-the-docs", 
+            "text": "From a terminal session change to the top-level directory       cd ~/git/addrobots_docs\n     mkdocs serve  Now from your browser go to the URL:  http://127.0.0.1:8000  As you edit the markdown files, mkdocs automatically updates the website in realtime so that you can review your changes.", 
+            "title": "Editing the docs"
+        }, 
+        {
+            "location": "/about/contribute/#generating-the-static-documentation-website", 
+            "text": "Once you've completed all of your edits, you need to generate the static site (not committed to git because \"./site\" is in .gitignore).       cd ~/git/addrobots_docs\n     mkdocs build  This will generate a static documentation site in the directory ~/git/addrobots_docs/site. You can validate the site by killing the \"mkdocs serve\" process and starting a simple Python=-based web server in that directory:       cd ~/git/addrobots_docs/site\n     python -m SimpleHTTPServer 8000  Now from your browser go to the URL:  http://127.0.0.1:8000", 
+            "title": "Generating the Static Documentation Website"
+        }, 
+        {
+            "location": "/about/contribute/#commit-the-static-site-to-github-project-pages-gh-pages", 
+            "text": "cd ~/git/addrobots_docs\n     mkdocs gh-deploy --clean  This command will generate the static site and push it to the gh-pages branch so that it shows up as a searchable, shred website (on github). The url will be  https://your_github_id.github.io/addrobots_docs/ .", 
+            "title": "Commit the Static Site to Github Project Pages (\"gh-pages\")"
+        }, 
+        {
+            "location": "/about/license/", 
+            "text": "BSD License\n\n\nCopyright (c) 2016, Jeff Williams\nAll rights reserved.\n\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n    * Redistributions of source code must retain the above copyright\n      notice, this list of conditions and the following disclaimer.\n    * Redistributions in binary form must reproduce the above copyright\n      notice, this list of conditions and the following disclaimer in the\n      documentation and/or other materials provided with the distribution.\n    * Neither the name of the \n nor the\n      names of its contributors may be used to endorse or promote products\n      derived from this software without specific prior written permission.\n\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL \n BE LIABLE FOR ANY\nDIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\nON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.", 
+            "title": "License"
+        }, 
+        {
+            "location": "/about/license/#bsd-license", 
+            "text": "Copyright (c) 2016, Jeff Williams\nAll rights reserved.  Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n    * Redistributions of source code must retain the above copyright\n      notice, this list of conditions and the following disclaimer.\n    * Redistributions in binary form must reproduce the above copyright\n      notice, this list of conditions and the following disclaimer in the\n      documentation and/or other materials provided with the distribution.\n    * Neither the name of the   nor the\n      names of its contributors may be used to endorse or promote products\n      derived from this software without specific prior written permission.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL   BE LIABLE FOR ANY\nDIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\nON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.", 
+            "title": "BSD License"
+        }, 
+        {
+            "location": "/about/zerodiff/", 
+            "text": "We follow the ZeroDiff process to develop the AddRobots. You can read more about it at: \nhttp://www.zerodiff.org", 
+            "title": "ZeroDiff"
         }
     ]
 }

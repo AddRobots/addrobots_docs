@@ -12,54 +12,6 @@
     
         
     <url>
-     <loc>https://github.com/AddRobots/addrobots_docs//repos/repos/</loc>
-     <lastmod>2017-08-22</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://github.com/AddRobots/addrobots_docs/</loc>
-     <lastmod></lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-    <url>
-     <loc>https://github.com/AddRobots/addrobots_docs//about/management/</loc>
-     <lastmod>2017-08-22</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>https://github.com/AddRobots/addrobots_docs//about/contribute/</loc>
-     <lastmod>2017-08-22</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>https://github.com/AddRobots/addrobots_docs//about/license/</loc>
-     <lastmod>2017-08-22</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>https://github.com/AddRobots/addrobots_docs//about/zerodiff/</loc>
-     <lastmod>2017-08-22</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-        
-    <url>
      <loc>https://github.com/AddRobots/addrobots_docs//messages/motor/</loc>
      <lastmod>2017-08-22</lastmod>
      <changefreq>daily</changefreq>
@@ -93,6 +45,54 @@
      <changefreq>daily</changefreq>
     </url>
         
+    
+
+    
+    <url>
+     <loc>https://github.com/AddRobots/addrobots_docs//about/management/</loc>
+     <lastmod>2017-08-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>https://github.com/AddRobots/addrobots_docs//repos/repos/</loc>
+     <lastmod>2017-08-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://github.com/AddRobots/addrobots_docs/</loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>https://github.com/AddRobots/addrobots_docs//about/contribute/</loc>
+     <lastmod>2017-08-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>https://github.com/AddRobots/addrobots_docs//about/license/</loc>
+     <lastmod>2017-08-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>https://github.com/AddRobots/addrobots_docs//about/zerodiff/</loc>
+     <lastmod>2017-08-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
     
 
 </urlset>
