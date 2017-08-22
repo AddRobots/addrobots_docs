@@ -10,7 +10,7 @@
         <meta name="description" content="Documentation">
       
       
-        <link rel="canonical" href="https://github.com/AddRobots/addrobots_docs/about/contribute/">
+        <link rel="canonical" href="https://github.com/AddRobots/addrobots_docs/about/management/">
       
       
         <meta name="author" content="Jeff Williams">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Contribute - AddRobots</title>
+        <title>Project Management - AddRobots</title>
       
     
     
@@ -84,7 +84,7 @@
             
               
             
-            Contribute
+            Project Management
           
         </span>
       </div>
@@ -366,18 +366,6 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../management/" title="Project Management" class="md-nav__link">
-      Project Management
-    </a>
-  </li>
-
-    
-      
-      
-      
-
   
 
 
@@ -385,54 +373,44 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Contribute
+        Project Management
       </label>
     
-    <a href="./" title="Contribute" class="md-nav__link md-nav__link--active">
-      Contribute
+    <a href="./" title="Project Management" class="md-nav__link md-nav__link--active">
+      Project Management
     </a>
     
       
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#contribute" title="Contribute" class="md-nav__link">
-    Contribute
+  <a href="#issues" title="Issues" class="md-nav__link">
+    Issues
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#installing-python-and-mkdocs" title="Installing Python and mkdocs." class="md-nav__link">
-    Installing Python and mkdocs.
+  <a href="#milestones" title="Milestones" class="md-nav__link">
+    Milestones
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#editing-the-docs" title="Editing the docs" class="md-nav__link">
-    Editing the docs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#generating-the-static-documentation-website" title="Generating the Static Documentation Website" class="md-nav__link">
-    Generating the Static Documentation Website
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#commit-the-static-site-to-github-project-pages-gh-pages" title="Commit the Static Site to Github Project Pages ("gh-pages")" class="md-nav__link">
-    Commit the Static Site to Github Project Pages ("gh-pages")
+  <a href="#sprints" title="Sprints" class="md-nav__link">
+    Sprints
   </a>
   
 </li>
@@ -443,6 +421,18 @@
   
 </nav>
     
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../contribute/" title="Contribute" class="md-nav__link">
+      Contribute
+    </a>
   </li>
 
     
@@ -652,41 +642,29 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#contribute" title="Contribute" class="md-nav__link">
-    Contribute
+  <a href="#issues" title="Issues" class="md-nav__link">
+    Issues
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#installing-python-and-mkdocs" title="Installing Python and mkdocs." class="md-nav__link">
-    Installing Python and mkdocs.
+  <a href="#milestones" title="Milestones" class="md-nav__link">
+    Milestones
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#editing-the-docs" title="Editing the docs" class="md-nav__link">
-    Editing the docs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#generating-the-static-documentation-website" title="Generating the Static Documentation Website" class="md-nav__link">
-    Generating the Static Documentation Website
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#commit-the-static-site-to-github-project-pages-gh-pages" title="Commit the Static Site to Github Project Pages ("gh-pages")" class="md-nav__link">
-    Commit the Static Site to Github Project Pages ("gh-pages")
+  <a href="#sprints" title="Sprints" class="md-nav__link">
+    Sprints
   </a>
   
 </li>
@@ -705,42 +683,17 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/AddRobots/addrobots_docs/edit/master/docs/about/contribute.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
+                  <a href="https://github.com/AddRobots/addrobots_docs/edit/master/docs/about/management.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
                 
                 
-                  <h1>Contribute</h1>
-                
-                <h2 id="contribute">Contribute<a class="headerlink" href="#contribute" title="Permanent link">&para;</a></h2>
-<p>AddRobots docs use <a href="https://http://www.mkdocs.org/">mkdocs</a> and committed it all to github. This setup not only generates nice-looking, searchable documentation, it makes it possible to share/fork it so that AddRobots can be a community effort.</p>
-<p>The mkdocs system is a self-contained, Python-based documentation tool that uses Twitter Bootstrap and scripting to generate high-quality HTML-based documentation using simple markdown files. The cool thing about mkdocs is that the repo is both the documentation set and place to generate the static, production site. The top-level mkdocs.yml file shows the documentation tree structure and configurations. If you edit this file, it will be pretty easy to see what markdown (*.md) files you need to edit in order to change the docs you want changed.</p>
-<h2 id="installing-python-and-mkdocs">Installing Python and mkdocs.<a class="headerlink" href="#installing-python-and-mkdocs" title="Permanent link">&para;</a></h2>
-<p>Please see the mkdocs website to see how to install Python and the mkdocs tools. It's pretty simple and easy to do this, but it's out-of-scope to explain that here.</p>
-<h2 id="editing-the-docs">Editing the docs<a class="headerlink" href="#editing-the-docs" title="Permanent link">&para;</a></h2>
-<p>From a terminal session change to the top-level directory</p>
-<pre class="codehilite"><code>    &gt;cd ~/git/addrobots_docs
-    &gt;mkdocs serve</code></pre>
-
-
-<p>Now from your browser go to the URL: <a href="http://http://127.0.0.1:8000">http://127.0.0.1:8000</a></p>
-<p>As you edit the markdown files, mkdocs automatically updates the website in realtime so that you can review your changes.</p>
-<h2 id="generating-the-static-documentation-website">Generating the Static Documentation Website<a class="headerlink" href="#generating-the-static-documentation-website" title="Permanent link">&para;</a></h2>
-<p>Once you've completed all of your edits, you need to generate the static site (not committed to git because "./site" is in .gitignore).</p>
-<pre class="codehilite"><code>    &gt;cd ~/git/addrobots_docs
-    &gt;mkdocs build</code></pre>
-
-
-<p>This will generate a static documentation site in the directory ~/git/addrobots_docs/site. You can validate the site by killing the "mkdocs serve" process and starting a simple Python=-based web server in that directory:</p>
-<pre class="codehilite"><code>    &gt;cd ~/git/addrobots_docs/site
-    &gt;python -m SimpleHTTPServer 8000</code></pre>
-
-
-<p>Now from your browser go to the URL: <a href="http://http://127.0.0.1:8000">http://127.0.0.1:8000</a></p>
-<h2 id="commit-the-static-site-to-github-project-pages-gh-pages">Commit the Static Site to Github Project Pages ("gh-pages")<a class="headerlink" href="#commit-the-static-site-to-github-project-pages-gh-pages" title="Permanent link">&para;</a></h2>
-<pre class="codehilite"><code>    &gt;cd ~/git/addrobots_docs
-    &gt;mkdocs gh-deploy --clean</code></pre>
-
-
-<p>This command will generate the static site and push it to the gh-pages branch so that it shows up as a searchable, shred website (on github). The url will be <a href="https://your_github_id.github.io/addrobots_docs/">https://your_github_id.github.io/addrobots_docs/</a>.</p>
+                <h1 id="project-management">Project Management<a class="headerlink" href="#project-management" title="Permanent link">&para;</a></h1>
+<h2 id="issues">Issues<a class="headerlink" href="#issues" title="Permanent link">&para;</a></h2>
+<p>Github project management allows us to collect issues from each repo into a central kanban management board here: <a href="https://github.com/orgs/AddRobots/projects/1">https://github.com/orgs/AddRobots/projects/1</a> </p>
+<p>Enter issues into the appropriate repo and then place them onto the board as appropriate.</p>
+<h2 id="milestones">Milestones<a class="headerlink" href="#milestones" title="Permanent link">&para;</a></h2>
+<p>Github project management cannot have it's own milestones, and it cannot track milestones from each repo. Instead, create milestones within each repo that apply to that repo only. This is not a problem since we run sprints separately on each repo.</p>
+<h2 id="sprints">Sprints<a class="headerlink" href="#sprints" title="Permanent link">&para;</a></h2>
+<p>Jen DeWalt has an excellent guide for how to manage sprints from within Github. <a href="https://zube.io/blog/agile-project-management-workflow-for-github-issues/">https://zube.io/blog/agile-project-management-workflow-for-github-issues/</a>. We mostly follow this process, except that there are many repos across the project, so each repo has its own sprint.</p>
                 
                   
                 
@@ -759,7 +712,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../management/" title="Project Management" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../repos/addrobots_mcu/" title="MCU" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -768,19 +721,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Project Management
+                MCU
               </span>
             </div>
           </a>
         
         
-          <a href="../license/" title="License" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../contribute/" title="Contribute" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                License
+                Contribute
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

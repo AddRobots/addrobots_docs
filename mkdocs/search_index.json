@@ -161,6 +161,31 @@
             "title": "Project Improvements &amp; Goals"
         }, 
         {
+            "location": "/about/management/", 
+            "text": "Project Management\n\n\nIssues\n\n\nGithub project management allows us to collect issues from each repo into a central kanban management board here: \nhttps://github.com/orgs/AddRobots/projects/1\n \n\n\nEnter issues into the appropriate repo and then place them onto the board as appropriate.\n\n\nMilestones\n\n\nGithub project management cannot have it's own milestones, and it cannot track milestones from each repo. Instead, create milestones within each repo that apply to that repo only. This is not a problem since we run sprints separately on each repo.\n\n\nSprints\n\n\nJen DeWalt has an excellent guide for how to manage sprints from within Github. \nhttps://zube.io/blog/agile-project-management-workflow-for-github-issues/\n. We mostly follow this process, except that there are many repos across the project, so each repo has its own sprint.", 
+            "title": "Project Management"
+        }, 
+        {
+            "location": "/about/management/#project-management", 
+            "text": "", 
+            "title": "Project Management"
+        }, 
+        {
+            "location": "/about/management/#issues", 
+            "text": "Github project management allows us to collect issues from each repo into a central kanban management board here:  https://github.com/orgs/AddRobots/projects/1    Enter issues into the appropriate repo and then place them onto the board as appropriate.", 
+            "title": "Issues"
+        }, 
+        {
+            "location": "/about/management/#milestones", 
+            "text": "Github project management cannot have it's own milestones, and it cannot track milestones from each repo. Instead, create milestones within each repo that apply to that repo only. This is not a problem since we run sprints separately on each repo.", 
+            "title": "Milestones"
+        }, 
+        {
+            "location": "/about/management/#sprints", 
+            "text": "Jen DeWalt has an excellent guide for how to manage sprints from within Github.  https://zube.io/blog/agile-project-management-workflow-for-github-issues/ . We mostly follow this process, except that there are many repos across the project, so each repo has its own sprint.", 
+            "title": "Sprints"
+        }, 
+        {
             "location": "/about/contribute/", 
             "text": "Contribute\n\n\nAddRobots docs use \nmkdocs\n and committed it all to github. This setup not only generates nice-looking, searchable documentation, it makes it possible to share/fork it so that AddRobots can be a community effort.\n\n\nThe mkdocs system is a self-contained, Python-based documentation tool that uses Twitter Bootstrap and scripting to generate high-quality HTML-based documentation using simple markdown files. The cool thing about mkdocs is that the repo is both the documentation set and place to generate the static, production site. The top-level mkdocs.yml file shows the documentation tree structure and configurations. If you edit this file, it will be pretty easy to see what markdown (*.md) files you need to edit in order to change the docs you want changed.\n\n\nInstalling Python and mkdocs.\n\n\nPlease see the mkdocs website to see how to install Python and the mkdocs tools. It's pretty simple and easy to do this, but it's out-of-scope to explain that here.\n\n\nEditing the docs\n\n\nFrom a terminal session change to the top-level directory\n\n\n    \ncd ~/git/addrobots_docs\n    \nmkdocs serve\n\n\n\n\nNow from your browser go to the URL: \nhttp://127.0.0.1:8000\n\n\nAs you edit the markdown files, mkdocs automatically updates the website in realtime so that you can review your changes.\n\n\nGenerating the Static Documentation Website\n\n\nOnce you've completed all of your edits, you need to generate the static site (not committed to git because \"./site\" is in .gitignore).\n\n\n    \ncd ~/git/addrobots_docs\n    \nmkdocs build\n\n\n\n\nThis will generate a static documentation site in the directory ~/git/addrobots_docs/site. You can validate the site by killing the \"mkdocs serve\" process and starting a simple Python=-based web server in that directory:\n\n\n    \ncd ~/git/addrobots_docs/site\n    \npython -m SimpleHTTPServer 8000\n\n\n\n\nNow from your browser go to the URL: \nhttp://127.0.0.1:8000\n\n\nCommit the Static Site to Github Project Pages (\"gh-pages\")\n\n\n    \ncd ~/git/addrobots_docs\n    \nmkdocs gh-deploy --clean\n\n\n\n\nThis command will generate the static site and push it to the gh-pages branch so that it shows up as a searchable, shred website (on github). The url will be \nhttps://your_github_id.github.io/addrobots_docs/\n.", 
             "title": "Contribute"
@@ -202,7 +227,7 @@
         }, 
         {
             "location": "/about/zerodiff/", 
-            "text": "We follow the ZeroDiff process to develop the AddRobots. You can read more about it \nhere", 
+            "text": "We follow the ZeroDiff process to develop the AddRobots. You can read more about it at: \nhttp://www.zerodiff.org", 
             "title": "ZeroDiff"
         }, 
         {
