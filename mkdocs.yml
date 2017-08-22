@@ -5,16 +5,6 @@ site_url: 'https://github.com/AddRobots/addrobots_docs/'
 
 pages:
 - Home: index.md
-- Repos:
-  - Overview: repos/repos.md
-  - Instructtions:
-    - ProtoBuf: repos/addrobots_proto.md
-    - VCU: repos/addrobots_vcu.md
-    - MCU: repos/addrobots_mcu.md
-- Project Management: about/management.md
-- Contribute: about/contribute.md
-- License: about/license.md
-- ZeroDiff: about/zerodiff.md
 - Motor Messages:
   - General: messages/motor.md
   - Core Messages:
@@ -25,6 +15,16 @@ pages:
 - Applications:
   - Shim Application: applications/shim.md
   - Robotic Cart: applications/cart.md
+- Project Management: about/management.md
+- Repos:
+  - Overview: repos/repos.md
+  - Instructtions:
+    - ProtoBuf: repos/addrobots_proto.md
+    - VCU: repos/addrobots_vcu.md
+    - MCU: repos/addrobots_mcu.md
+- Contribute: about/contribute.md
+- License: about/license.md
+- ZeroDiff: about/zerodiff.md
 
 #theme: mkdocs
 theme: null
