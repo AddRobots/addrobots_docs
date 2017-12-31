@@ -810,9 +810,9 @@
 <h3 id="javascript-message-generation">Javascript message generation<a class="headerlink" href="#javascript-message-generation" title="Permanent link">&para;</a></h3>
 <pre class="codehilite"><code>&gt; cd ~/git/addrobots_proto/
 
-&gt; protoc --proto_path=./SourceMessages/ --js_out=binary:./Production/Javascript/ ./SourceMessages/VehicleMsg.proto
+&gt; protoc --proto_path=./SourceMessages/ --js_out=import_style=commonjs,binary:./Production/Javascript/ ./SourceMessages/VehicleMsg.proto
 
-&gt; protoc --proto_path=./SourceMessages/ --js_out=binary:./Production/Javascript/ ./SourceMessages/MotorMsg.proto</code></pre>
+&gt; protoc --proto_path=./SourceMessages/ --js_out=import_style=commonjs,binary:./Production/Javascript/ ./SourceMessages/MotorMsg.proto</code></pre>
 
 
 <h3 id="python-message-generation">Python message generation<a class="headerlink" href="#python-message-generation" title="Permanent link">&para;</a></h3>
