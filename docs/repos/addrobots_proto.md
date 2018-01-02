@@ -20,9 +20,9 @@ The protoc command comes from the Google github repo: [https://github.com/google
 
 	> cd ~/git/addrobots_proto/
 
-	> protoc --proto_path=./SourceMessages/ --js_out=binary:./Production/Javascript/ ./SourceMessages/VehicleMsg.proto
+	> protoc --proto_path=./SourceMessages/ --js_out=import_style=commonjs,binary:./Production/Javascript/ ./SourceMessages/VehicleMsg.proto
 
-	> protoc --proto_path=./SourceMessages/ --js_out=binary:./Production/Javascript/ ./SourceMessages/MotorMsg.proto
+	> protoc --proto_path=./SourceMessages/ --js_out=import_style=commonjs,binary:./Production/Javascript/ ./SourceMessages/MotorMsg.proto
 
 ### Python message generation
 
