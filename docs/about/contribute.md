@@ -1,6 +1,6 @@
 ## Contribute
 
-AddRobots docs use <a href="https://http://www.mkdocs.org/">mkdocs</a> and committed it all to github. This setup not only generates nice-looking, searchable documentation, it makes it possible to share/fork it so that AddRobots can be a community effort.
+AddRobots docs use <a href="http://www.mkdocs.org/">mkdocs</a> and committed it all to github. This setup not only generates nice-looking, searchable documentation, it makes it possible to share/fork it so that AddRobots can be a community effort.
 
 The mkdocs system is a self-contained, Python-based documentation tool that uses Twitter Bootstrap and scripting to generate high-quality HTML-based documentation using simple markdown files. The cool thing about mkdocs is that the repo is both the documentation set and place to generate the static, production site. The top-level mkdocs.yml file shows the documentation tree structure and configurations. If you edit this file, it will be pretty easy to see what markdown (*.md) files you need to edit in order to change the docs you want changed.
 
