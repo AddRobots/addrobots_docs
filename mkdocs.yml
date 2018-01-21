@@ -18,7 +18,7 @@ pages:
 - Project Management: about/management.md
 - Repos:
   - Overview: repos/repos.md
-  - Instructtions:
+  - Instructions:
     - ProtoBuf: repos/addrobots_proto.md
     - VCU: repos/addrobots_vcu.md
     - MCU: repos/addrobots_mcu.md
