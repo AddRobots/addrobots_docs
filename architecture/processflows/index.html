@@ -60,7 +60,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
-      <link rel="stylesheet" href="../../docs/js/extra.css">
+      <link rel="stylesheet" href="../.././js/extra.css">
     
     
   </head>
@@ -381,8 +381,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#remote-webapp-reactjs-control-of-local-android-robot-control" title="Remote WebApp (ReactJS) control of local (Android) robot control" class="md-nav__link">
-    Remote WebApp (ReactJS) control of local (Android) robot control
+  <a href="#remote-webapp-reactjs-to-vehicle-control" title="Remote WebApp (ReactJS) to vehicle control" class="md-nav__link">
+    Remote WebApp (ReactJS) to vehicle control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-webapp-reactjs-to-direct-motor-control" title="Remote WebApp (ReactJS) to direct motor control" class="md-nav__link">
+    Remote WebApp (ReactJS) to direct motor control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decode" title="Decode" class="md-nav__link">
+    Decode
   </a>
   
 </li>
@@ -770,8 +784,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#remote-webapp-reactjs-control-of-local-android-robot-control" title="Remote WebApp (ReactJS) control of local (Android) robot control" class="md-nav__link">
-    Remote WebApp (ReactJS) control of local (Android) robot control
+  <a href="#remote-webapp-reactjs-to-vehicle-control" title="Remote WebApp (ReactJS) to vehicle control" class="md-nav__link">
+    Remote WebApp (ReactJS) to vehicle control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-webapp-reactjs-to-direct-motor-control" title="Remote WebApp (ReactJS) to direct motor control" class="md-nav__link">
+    Remote WebApp (ReactJS) to direct motor control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decode" title="Decode" class="md-nav__link">
+    Decode
   </a>
   
 </li>
@@ -794,13 +822,60 @@
                 
                 
                 <h1 id="high-level-control">High-Level Control<a class="headerlink" href="#high-level-control" title="Permanent link">&para;</a></h1>
-<h2 id="remote-webapp-reactjs-control-of-local-android-robot-control">Remote WebApp (ReactJS) control of local (Android) robot control<a class="headerlink" href="#remote-webapp-reactjs-control-of-local-android-robot-control" title="Permanent link">&para;</a></h2>
-<pre class="uml-sequence-diagram"><code>Title: Peer-to-Peer Control
-WebApp-&gt;Google Cloud Messaging: VehicleCmd (Protobuf)
-Google Cloud Messaging-&gt;Android: VehicleCmd (Protobuf)
-Android-&gt;Motor Control Board: MotorCmd (Protobuf)
-Motor Control Board-&gt;Android: MotorData (Protobuf)
-Android-&gt;Motor Control Board: PID-derived MotorCmd</code></pre>
+<h3 id="remote-webapp-reactjs-to-vehicle-control">Remote WebApp (ReactJS) to vehicle control<a class="headerlink" href="#remote-webapp-reactjs-to-vehicle-control" title="Permanent link">&para;</a></h3>
+<pre class="uml-sequence-diagram"><code>Title: Remote Vehicle Control
+WebApp-&gt;GCM: VehicleCmd
+GCM-&gt;VCU: VehicleCmd
+VCU-&gt;Shim: MotorCmd
+Shim-&gt;MCU: MotorCmd
+MCU-&gt;Shim: MotorData
+Shim-&gt;VCU: MotorData
+VCU-&gt;Shim: MotorCmd (PID)
+VCU-&gt;MCU:  MotorCmd (PID)</code></pre>
+
+<h3 id="remote-webapp-reactjs-to-direct-motor-control">Remote WebApp (ReactJS) to direct motor control<a class="headerlink" href="#remote-webapp-reactjs-to-direct-motor-control" title="Permanent link">&para;</a></h3>
+<pre class="uml-sequence-diagram"><code>Title: Remote Motor Control
+WebApp-&gt;GCM: VehicleCmd
+GCM-&gt;Shim: VehicleCmd
+Shim-&gt;MCU: MotorCmd
+MCU-&gt;Shim: MotorData
+Shim-&gt;GCM: MotorData
+GCM-&gt;WebApp: MotorData
+WebApp-&gt;GCM: MotorCmd (PID)
+GCM-&gt;Shim: MotorCmd (PID)
+Shim-&gt;MCU:  MotorCmd (PID)</code></pre>
+
+<h3 id="decode">Decode<a class="headerlink" href="#decode" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WebApp</td>
+<td>The ReactJS webapp running on a user's device</td>
+</tr>
+<tr>
+<td>GCM</td>
+<td>Google Cloud Messaging</td>
+</tr>
+<tr>
+<td>VCU</td>
+<td>The vehicle control programming that runs the local robot's android device</td>
+</tr>
+<tr>
+<td>Shim</td>
+<td>The motor command handler background process that runs on the local robot's android device</td>
+</tr>
+<tr>
+<td>MCU</td>
+<td>The physical motor controller tied to Android by USB3 Type-C</td>
+</tr>
+</tbody>
+</table>
                 
                   
                 
@@ -886,7 +961,19 @@ Android-&gt;Motor Control Board: PID-derived MotorCmd</code></pre>
       
       <script>app.initialize({version:"0.17.2",url:{base:"../.."}})</script>
       
-        <script src="../../docs/js/extra.js"></script>
+        <script src="../.././js/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script>
       
     
     
