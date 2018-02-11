@@ -13,7 +13,7 @@
         <meta name="description" content="Documentation">
       
       
-        <link rel="canonical" href="https://github.com/AddRobots/addrobots_docs/applications/shim/">
+        <link rel="canonical" href="https://github.com/AddRobots/addrobots_docs/architecture/processflows/">
       
       
         <meta name="author" content="Jeff Williams">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Shim Application - AddRobots</title>
+        <title>Information Flow - AddRobots</title>
       
     
     
@@ -96,7 +96,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#shim-application" tabindex="1" class="md-skip">
+      <a href="#high-level-control" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -122,7 +122,7 @@
                 AddRobots
               </span>
               <span class="md-header-nav__topic">
-                Shim Application
+                Information Flow
               </span>
             
           
@@ -215,7 +215,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../architecture/processflows/" title="Architecture" class="md-tabs__link">
+        <a href="./" title="Architecture" class="md-tabs__link md-tabs__link--active">
           Architecture
         </a>
       
@@ -241,7 +241,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="./" title="Applications" class="md-tabs__link md-tabs__link--active">
+        <a href="../../applications/shim/" title="Applications" class="md-tabs__link">
           Applications
         </a>
       
@@ -331,10 +331,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Architecture
@@ -350,11 +352,47 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../architecture/processflows/" title="Information Flow" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Information Flow
+      </label>
+    
+    <a href="./" title="Information Flow" class="md-nav__link md-nav__link--active">
       Information Flow
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#remote-webapp-reactjs-control-of-local-android-robot-control" title="Remote WebApp (ReactJS) control of local (Android) robot control" class="md-nav__link">
+    Remote WebApp (ReactJS) control of local (Android) robot control
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -523,12 +561,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
       Applications
@@ -544,43 +580,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Shim Application
-      </label>
-    
-    <a href="./" title="Shim Application" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../applications/shim/" title="Shim Application" class="md-nav__link">
       Shim Application
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#shim-application" title="Shim Application" class="md-nav__link">
-    Shim Application
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -590,7 +594,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../cart/" title="Robotic Cart" class="md-nav__link">
+    <a href="../../applications/cart/" title="Robotic Cart" class="md-nav__link">
       Robotic Cart
     </a>
   </li>
@@ -759,13 +763,15 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#shim-application" title="Shim Application" class="md-nav__link">
-    Shim Application
+  <a href="#remote-webapp-reactjs-control-of-local-android-robot-control" title="Remote WebApp (ReactJS) control of local (Android) robot control" class="md-nav__link">
+    Remote WebApp (ReactJS) control of local (Android) robot control
   </a>
   
 </li>
@@ -784,13 +790,17 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/AddRobots/addrobots_docs/edit/master/docs/applications/shim.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/AddRobots/addrobots_docs/edit/master/docs/architecture/processflows.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Shim Application</h1>
-                
-                <h2 id="shim-application">Shim Application<a class="headerlink" href="#shim-application" title="Permanent link">&para;</a></h2>
-<p>The shim application simply passes motor commands to/from Google Compute (Firebase) to the local motor with no local processing at all. These kinds of applications will not be able to take advantage of the local smartphone capabilities (cameras, IMU, GPS, touch-screen UX, etc), but for many simple control applications this may be perfectly suitable. A silly example is an Internet-controlled cat feeder.</p>
+                <h1 id="high-level-control">High-Level Control<a class="headerlink" href="#high-level-control" title="Permanent link">&para;</a></h1>
+<h2 id="remote-webapp-reactjs-control-of-local-android-robot-control">Remote WebApp (ReactJS) control of local (Android) robot control<a class="headerlink" href="#remote-webapp-reactjs-control-of-local-android-robot-control" title="Permanent link">&para;</a></h2>
+<pre class="uml-sequence-diagram"><code>Title: Peer-to-Peer Control
+WebApp-&gt;Google Cloud Messaging: VehicleCmd (Protobuf)
+Google Cloud Messaging-&gt;Android: VehicleCmd (Protobuf)
+Android-&gt;Motor Control Board: MotorCmd (Protobuf)
+Motor Control Board-&gt;Android: MotorData (Protobuf)
+Android-&gt;Motor Control Board: PID-derived MotorCmd</code></pre>
                 
                   
                 
@@ -809,7 +819,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../messages/vehicle/application/cartcmds/" title="Robotic Cart" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../.." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -818,19 +828,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Robotic Cart
+                Home
               </span>
             </div>
           </a>
         
         
-          <a href="../cart/" title="Robotic Cart" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../messages/general/" title="General" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Robotic Cart
+                General
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
