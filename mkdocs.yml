@@ -78,14 +78,16 @@ repo_url: https://github.com/AddRobots/addrobots_docs/
 copyright: AddRobots Documentation<br>Copyright &copy; 2018 <a href="https://github.com/0x6a77">Jeff Williams</a> under BSD-3 License
 
 extra_css:
-  - docs/js/extra.css
-extra_javascript:
-  - docs/js/extra.js
+  - ./js/extra.css
 
-custom_fences: [
-    {'name': 'flow', 'class': 'uml-flowchart', 'format': superfences.fence_code_format},
-    {'name': 'sequence', 'class': 'uml-sequence-diagram', 'format': superfences.fence_code_format}
-]
+extra_javascript:
+  - './js/extra.js'
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+  - 'https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js'
+  - 'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'
+  - 'https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js'
+  - 'https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js'
 
 google_analytics:
   - 'UA-77221538-1'

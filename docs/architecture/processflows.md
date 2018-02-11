@@ -1,12 +1,40 @@
 # High-Level Control
 
-## Remote WebApp (ReactJS) control of local (Android) robot control
+### Remote WebApp (ReactJS) to vehicle control
 
 ```sequence
-Title: Peer-to-Peer Control
-WebApp->Google Cloud Messaging: VehicleCmd (Protobuf)
-Google Cloud Messaging->Android: VehicleCmd (Protobuf)
-Android->Motor Control Board: MotorCmd (Protobuf)
-Motor Control Board->Android: MotorData (Protobuf)
-Android->Motor Control Board: PID-derived MotorCmd
+Title: Remote Vehicle Control
+WebApp->GCM: VehicleCmd
+GCM->VCU: VehicleCmd
+VCU->Shim: MotorCmd
+Shim->MCU: MotorCmd
+MCU->Shim: MotorData
+Shim->VCU: MotorData
+VCU->Shim: MotorCmd (PID)
+VCU->MCU:  MotorCmd (PID)
 ```
+
+### Remote WebApp (ReactJS) to direct motor control
+
+```sequence
+Title: Remote Motor Control
+WebApp->GCM: VehicleCmd
+GCM->Shim: VehicleCmd
+Shim->MCU: MotorCmd
+MCU->Shim: MotorData
+Shim->GCM: MotorData
+GCM->WebApp: MotorData
+WebApp->GCM: MotorCmd (PID)
+GCM->Shim: MotorCmd (PID)
+Shim->MCU:  MotorCmd (PID)
+```
+
+### Decode
+
+Code | Description
+---|---
+WebApp | The ReactJS webapp running on a user's device
+GCM | Google Cloud Messaging
+VCU | The vehicle control programming that runs the local robot's android device
+Shim | The motor command handler background process that runs on the local robot's android device
+MCU | The physical motor controller tied to Android by USB3 Type-C
