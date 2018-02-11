@@ -18,8 +18,8 @@ VCU->MCU:  MotorCmd (PID)
 
 ```sequence
 Title: Remote Motor Control
-WebApp->GCM: VehicleCmd
-GCM->Shim: VehicleCmd
+WebApp->GCM: MotorCmd
+GCM->Shim: MotorCmd
 Shim->MCU: MotorCmd
 MCU->Shim: MotorData
 Shim->GCM: MotorData
