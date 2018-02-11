@@ -22,7 +22,7 @@
         }, 
         {
             "location": "/architecture/processflows/", 
-            "text": "High-Level Control\n\n\nRemote WebApp (ReactJS) to vehicle control\n\n\nTitle: Remote Vehicle Control\nWebApp-\nGCM: VehicleCmd\nGCM-\nVCU: VehicleCmd\nVCU-\nShim: MotorCmd\nShim-\nMCU: MotorCmd\nMCU-\nShim: MotorData\nShim-\nVCU: MotorData\nVCU-\nShim: MotorCmd (PID)\nVCU-\nMCU:  MotorCmd (PID)\n\n\n\nRemote WebApp (ReactJS) to direct motor control\n\n\nTitle: Remote Motor Control\nWebApp-\nGCM: VehicleCmd\nGCM-\nShim: VehicleCmd\nShim-\nMCU: MotorCmd\nMCU-\nShim: MotorData\nShim-\nGCM: MotorData\nGCM-\nWebApp: MotorData\nWebApp-\nGCM: MotorCmd (PID)\nGCM-\nShim: MotorCmd (PID)\nShim-\nMCU:  MotorCmd (PID)\n\n\n\nDecode\n\n\n\n\n\n\n\n\nCode\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nWebApp\n\n\nThe ReactJS webapp running on a user's device\n\n\n\n\n\n\nGCM\n\n\nGoogle Cloud Messaging\n\n\n\n\n\n\nVCU\n\n\nThe vehicle control programming that runs the local robot's android device\n\n\n\n\n\n\nShim\n\n\nThe motor command handler background process that runs on the local robot's android device\n\n\n\n\n\n\nMCU\n\n\nThe physical motor controller tied to Android by USB3 Type-C", 
+            "text": "High-Level Control\n\n\nRemote WebApp (ReactJS) to vehicle control\n\n\nTitle: Remote Vehicle Control\nWebApp-\nGCM: VehicleCmd\nGCM-\nVCU: VehicleCmd\nVCU-\nShim: MotorCmd\nShim-\nMCU: MotorCmd\nMCU-\nShim: MotorData\nShim-\nVCU: MotorData\nVCU-\nShim: MotorCmd (PID)\nVCU-\nMCU:  MotorCmd (PID)\n\n\n\nRemote WebApp (ReactJS) to direct motor control\n\n\nTitle: Remote Motor Control\nWebApp-\nGCM: MotorCmd\nGCM-\nShim: MotorCmd\nShim-\nMCU: MotorCmd\nMCU-\nShim: MotorData\nShim-\nGCM: MotorData\nGCM-\nWebApp: MotorData\nWebApp-\nGCM: MotorCmd (PID)\nGCM-\nShim: MotorCmd (PID)\nShim-\nMCU:  MotorCmd (PID)\n\n\n\nDecode\n\n\n\n\n\n\n\n\nCode\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nWebApp\n\n\nThe ReactJS webapp running on a user's device\n\n\n\n\n\n\nGCM\n\n\nGoogle Cloud Messaging\n\n\n\n\n\n\nVCU\n\n\nThe vehicle control programming that runs the local robot's android device\n\n\n\n\n\n\nShim\n\n\nThe motor command handler background process that runs on the local robot's android device\n\n\n\n\n\n\nMCU\n\n\nThe physical motor controller tied to Android by USB3 Type-C", 
             "title": "Information Flow"
         }, 
         {
@@ -37,7 +37,7 @@
         }, 
         {
             "location": "/architecture/processflows/#remote-webapp-reactjs-to-direct-motor-control", 
-            "text": "Title: Remote Motor Control\nWebApp- GCM: VehicleCmd\nGCM- Shim: VehicleCmd\nShim- MCU: MotorCmd\nMCU- Shim: MotorData\nShim- GCM: MotorData\nGCM- WebApp: MotorData\nWebApp- GCM: MotorCmd (PID)\nGCM- Shim: MotorCmd (PID)\nShim- MCU:  MotorCmd (PID)", 
+            "text": "Title: Remote Motor Control\nWebApp- GCM: MotorCmd\nGCM- Shim: MotorCmd\nShim- MCU: MotorCmd\nMCU- Shim: MotorData\nShim- GCM: MotorData\nGCM- WebApp: MotorData\nWebApp- GCM: MotorCmd (PID)\nGCM- Shim: MotorCmd (PID)\nShim- MCU:  MotorCmd (PID)", 
             "title": "Remote WebApp (ReactJS) to direct motor control"
         }, 
         {
