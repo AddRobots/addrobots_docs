@@ -5,13 +5,17 @@ site_url: 'https://github.com/AddRobots/addrobots_docs/'
 
 pages:
 - Home: index.md
+- Architecture:
+  - Information Flow: architecture/processflows.md
 - Motor Messages:
-  - General: messages/motor.md
-  - Core Messages:
-    - MotorCmd: messages/commands/motorcmd.md
-    - MotorData: messages/data/motordata.md
+  - General: messages/general.md
+  - Motor Messages:
+    - MotorCmd: messages/motor/commands/motorcmd.md
+    - MotorData: messages/motor/data/motordata.md
+  - Vehicle Messages:
+    - VcuCmd: messages/vehicle/commands/vehiclecmds.md
   - Application Messages:
-    - Robotic Cart: messages/application/cartcmds.md
+    - Robotic Cart: messages/vehicle/application/cartcmds.md
 - Applications:
   - Shim Application: applications/shim.md
   - Robotic Cart: applications/cart.md
@@ -26,10 +30,14 @@ pages:
 - License: about/license.md
 - ZeroDiff: about/zerodiff.md
 
-#theme: mkdocs
-theme: null
-theme_dir: themes/material
-
+theme:
+  name: 'material'
+  theme_dir: themes/material
+  favicon: 'images/favicon/favicon.ico'
+  logo: 'images/favicon/apple-icon-144x144.png'
+  feature:
+    tabs: true
+    
 extra:
   feature:
     tabs: true
@@ -44,13 +52,41 @@ extra:
     - type: 'github'
       link: 'https://github.com/0x6a77'
 
-site_favicon: 'images/favicon/favicon.ico'
-
 markdown_extensions:
   - tables
   - admonition
   - codehilite(guess_lang=false)
   - toc(permalink=true)
-
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  
 repo_url: https://github.com/AddRobots/addrobots_docs/
-copyright: AddRobots Documentation<br>Copyright &copy; 2017 <a href="https://github.com/0x6a77">Jeff Williams</a> under BSD-3 License
+copyright: AddRobots Documentation<br>Copyright &copy; 2018 <a href="https://github.com/0x6a77">Jeff Williams</a> under BSD-3 License
+
+extra_css:
+  - docs/js/extra.css
+extra_javascript:
+  - docs/js/extra.js
+
+custom_fences: [
+    {'name': 'flow', 'class': 'uml-flowchart', 'format': superfences.fence_code_format},
+    {'name': 'sequence', 'class': 'uml-sequence-diagram', 'format': superfences.fence_code_format}
+]
+
+google_analytics:
+  - 'UA-77221538-1'
+  - 'auto'
