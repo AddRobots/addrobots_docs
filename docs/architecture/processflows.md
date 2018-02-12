@@ -11,7 +11,7 @@ Shim->MCU: MotorCmd
 MCU->Shim: MotorData
 Shim->VCU: MotorData
 VCU->Shim: MotorCmd (PID)
-VCU->MCU:  MotorCmd (PID)
+Shim->MCU:  MotorCmd (PID)
 ```
 
 ### Remote WebApp (ReactJS) to direct motor control
