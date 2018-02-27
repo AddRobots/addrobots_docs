@@ -3,8 +3,8 @@
 
     
     <url>
-     <loc>https://github.com/AddRobots/addrobots_docs//</loc>
-     <lastmod>2018-02-26</lastmod>
+     <loc>https://www.addrobots.com//</loc>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,8 +12,8 @@
     
         
     <url>
-     <loc>https://github.com/AddRobots/addrobots_docs//architecture/processflows/</loc>
-     <lastmod>2018-02-26</lastmod>
+     <loc>https://www.addrobots.com//architecture/processflows/</loc>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -22,65 +22,25 @@
     
         
     <url>
-     <loc>https://github.com/AddRobots/addrobots_docs//messages/general/</loc>
-     <lastmod>2018-02-26</lastmod>
+     <loc>https://www.addrobots.com//messages/general/</loc>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://github.com/AddRobots/addrobots_docs/</loc>
+     <loc>https://www.addrobots.com/</loc>
      <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://github.com/AddRobots/addrobots_docs/</loc>
+     <loc>https://www.addrobots.com/</loc>
      <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://github.com/AddRobots/addrobots_docs/</loc>
-     <lastmod></lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>https://github.com/AddRobots/addrobots_docs//applications/shim/</loc>
-     <lastmod>2018-02-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://github.com/AddRobots/addrobots_docs//applications/cart/</loc>
-     <lastmod>2018-02-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-    <url>
-     <loc>https://github.com/AddRobots/addrobots_docs//about/management/</loc>
-     <lastmod>2018-02-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-        
-    <url>
-     <loc>https://github.com/AddRobots/addrobots_docs//repos/repos/</loc>
-     <lastmod>2018-02-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://github.com/AddRobots/addrobots_docs/</loc>
+     <loc>https://www.addrobots.com/</loc>
      <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -88,25 +48,65 @@
     
 
     
+        
     <url>
-     <loc>https://github.com/AddRobots/addrobots_docs//about/contribute/</loc>
-     <lastmod>2018-02-26</lastmod>
+     <loc>https://www.addrobots.com//applications/shim/</loc>
+     <lastmod>2018-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://www.addrobots.com//applications/cart/</loc>
+     <lastmod>2018-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>https://www.addrobots.com//about/management/</loc>
+     <lastmod>2018-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>https://www.addrobots.com//repos/repos/</loc>
+     <lastmod>2018-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://www.addrobots.com/</loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>https://www.addrobots.com//about/contribute/</loc>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>https://github.com/AddRobots/addrobots_docs//about/license/</loc>
-     <lastmod>2018-02-26</lastmod>
+     <loc>https://www.addrobots.com//about/license/</loc>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>https://github.com/AddRobots/addrobots_docs//about/zerodiff/</loc>
-     <lastmod>2018-02-26</lastmod>
+     <loc>https://www.addrobots.com//about/zerodiff/</loc>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
