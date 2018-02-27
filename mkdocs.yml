@@ -1,7 +1,7 @@
 site_name: AddRobots
 site_description: 'Documentation'
 site_author: 'Jeff Williams'
-site_url: 'https://github.com/AddRobots/addrobots_docs/'
+site_url: 'https://www.addrobots.com/'
 
 pages:
 - Home: index.md
@@ -33,6 +33,7 @@ pages:
 theme:
   name: 'material'
   theme_dir: themes/material
+  custom_dir: theme-overrides
   favicon: 'images/favicon/favicon.ico'
   logo: 'images/favicon/apple-icon-144x144.png'
   feature:
@@ -43,7 +44,7 @@ extra:
     tabs: true
   logo: 'images/profile.png'
   palette:
-    primary: 'blue'
+    primary: 'indigo'
     accent: 'indigo'
   font:
     text: 'Roboto'
@@ -51,6 +52,8 @@ extra:
   social:
     - type: 'github'
       link: 'https://github.com/0x6a77'
+    - type: 'envelope-square'
+      link: 'http://eepurl.com/dl_CsD'
 
 markdown_extensions:
   - tables
@@ -88,7 +91,6 @@ extra_javascript:
   - 'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'
   - 'https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js'
   - 'https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js'
-  - 'https://app.getresponse.com/view_webform_v2.js?u=hvX9t&webforms_id=20699604'
 
 google_analytics:
   - 'UA-77221538-1'
