@@ -1,7 +1,7 @@
 site_name: AddRobots
 site_description: 'Documentation'
 site_author: 'Jeff Williams'
-site_url: 'https://www.addrobots.com/'
+site_url: 'https://docs.addrobots.com/'
 
 pages:
 - Home: index.md
