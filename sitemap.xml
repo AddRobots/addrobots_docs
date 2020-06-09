@@ -1,114 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
-    <url>
-     <loc>https://www.addrobots.com//</loc>
-     <lastmod>2018-03-09</lastmod>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
+     <loc>https://docs.addrobots.com/</loc>
+     <lastmod>2020-06-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://docs.addrobots.com/architecture/processflows/</loc>
+     <lastmod>2020-06-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://docs.addrobots.com/messages/general/</loc>
+     <lastmod>2020-06-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://docs.addrobots.com/messages/motor/commands/motorcmd/</loc>
+     <lastmod>2020-06-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://docs.addrobots.com/messages/motor/data/motordata/</loc>
+     <lastmod>2020-06-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://docs.addrobots.com/messages/vehicle/commands/vehiclecmds/</loc>
+     <lastmod>2020-06-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://docs.addrobots.com/messages/vehicle/application/cartcmds/</loc>
+     <lastmod>2020-06-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://docs.addrobots.com/android/overview/</loc>
+     <lastmod>2020-06-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://docs.addrobots.com/android/applications/shim/</loc>
+     <lastmod>2020-06-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://docs.addrobots.com/android/applications/cart/</loc>
+     <lastmod>2020-06-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://docs.addrobots.com/about/management/</loc>
+     <lastmod>2020-06-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://docs.addrobots.com/repos/repos/</loc>
+     <lastmod>2020-06-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://docs.addrobots.com/repos/addrobots_proto/</loc>
+     <lastmod>2020-06-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://docs.addrobots.com/repos/addrobots_vcu/</loc>
+     <lastmod>2020-06-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://docs.addrobots.com/repos/addrobots_mcu/</loc>
+     <lastmod>2020-06-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://docs.addrobots.com/about/contribute/</loc>
+     <lastmod>2020-06-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://docs.addrobots.com/about/license/</loc>
+     <lastmod>2020-06-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://docs.addrobots.com/about/zerodiff/</loc>
+     <lastmod>2020-06-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-        
-    <url>
-     <loc>https://www.addrobots.com//architecture/processflows/</loc>
-     <lastmod>2018-03-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>https://www.addrobots.com//messages/general/</loc>
-     <lastmod>2018-03-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://www.addrobots.com/</loc>
-     <lastmod></lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://www.addrobots.com/</loc>
-     <lastmod></lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://www.addrobots.com/</loc>
-     <lastmod></lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>https://www.addrobots.com//applications/shim/</loc>
-     <lastmod>2018-03-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://www.addrobots.com//applications/cart/</loc>
-     <lastmod>2018-03-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-    <url>
-     <loc>https://www.addrobots.com//about/management/</loc>
-     <lastmod>2018-03-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-        
-    <url>
-     <loc>https://www.addrobots.com//repos/repos/</loc>
-     <lastmod>2018-03-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://www.addrobots.com/</loc>
-     <lastmod></lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-    <url>
-     <loc>https://www.addrobots.com//about/contribute/</loc>
-     <lastmod>2018-03-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>https://www.addrobots.com//about/license/</loc>
-     <lastmod>2018-03-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>https://www.addrobots.com//about/zerodiff/</loc>
-     <lastmod>2018-03-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
 </urlset>
