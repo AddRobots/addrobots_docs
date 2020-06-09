@@ -16,9 +16,11 @@ pages:
     - VcuCmd: messages/vehicle/commands/vehiclecmds.md
   - Application Messages:
     - Robotic Cart: messages/vehicle/application/cartcmds.md
-- Applications:
-  - Shim Application: applications/shim.md
-  - Robotic Cart: applications/cart.md
+- Android:
+  - Overview: android/overview.md
+  - Applications:
+    - Shim Application: android/applications/shim.md
+    - Robotic Cart: android/applications/cart.md
 - Project Management: about/management.md
 - Repos:
   - Overview: repos/repos.md
@@ -58,8 +60,10 @@ extra:
 markdown_extensions:
   - tables
   - admonition
-  - codehilite(guess_lang=false)
-  - toc(permalink=true)
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
   - pymdownx.arithmatex
   - pymdownx.betterem:
       smart_enable: all
